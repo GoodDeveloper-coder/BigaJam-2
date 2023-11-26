@@ -10,6 +10,15 @@ using UnityEngine.Networking;
 using Random = UnityEngine.Random;
 
 
+/// <summary>
+/// The music manager plays background music in a scene.
+/// </summary>
+/// <remarks>
+/// It expects the music files to be in Assets/StreamingAssets as per Hea7en's request.
+/// 
+/// There are also a handful of options to change various aspects of how the music plays,
+/// such as volume level and random order or not.
+/// </remarks>
 public class MusicManager : MonoBehaviour
 {
     [Header("Music File Search Settings")]
