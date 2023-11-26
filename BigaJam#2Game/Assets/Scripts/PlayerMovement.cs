@@ -8,14 +8,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 2f;
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private InputActionReference _jumpInput;
-    [field:SerializeField] public int PlayerIndex { get; set; }
-    [SerializeField] CheckTriggerZone _gunScript;
     private Rigidbody2D _rb;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _gunScript.SetPlayer(PlayerIndex);
+        //_gunScript.SetPlayer(PlayerIndex);
     }
     private void Awake() 
     {
@@ -47,7 +45,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((moveVectorFirst.x > 0 && !faceRight) || (moveVectorFirst.x < 0 && faceRight))
         {
-            transform.localScale *= new Vector2(-1, 1);
+            if (faceRight) GetComponent<SpriteRenderer>().flipX = true;
+            if (!faceRight) GetComponent<SpriteRenderer>().flipX = false;
+            //transform.localScale *= new Vector2(-1, 1);
             faceRight = !faceRight;
         }
     }
