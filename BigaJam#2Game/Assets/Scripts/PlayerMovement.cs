@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        //_gunScript.SetPlayer(PlayerIndex);
     }
     private void Awake() 
     {
@@ -44,7 +45,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((moveVectorFirst.x > 0 && !faceRight) || (moveVectorFirst.x < 0 && faceRight))
         {
-            transform.localScale *= new Vector2(-1, 1);
+            if (faceRight) GetComponent<SpriteRenderer>().flipX = true;
+            if (!faceRight) GetComponent<SpriteRenderer>().flipX = false;
+            //transform.localScale *= new Vector2(-1, 1);
             faceRight = !faceRight;
         }
     }
