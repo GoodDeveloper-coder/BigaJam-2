@@ -12,9 +12,14 @@ public class Dialog_MainMenu : Dialog_Base
 
 
 
-    public void OnPlayClicked()
+    public void OnPlayParkourClicked()
     {
-        Debug.Log("Play clicked.");
+        Debug.Log("Play Parkour clicked.");
+    }
+
+    public void OnPlayShootingClicked()
+    {
+        Debug.Log("Play Shooting clicked.");
     }
 
     public void OnSettingsClicked()
