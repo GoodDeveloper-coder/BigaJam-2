@@ -11,7 +11,7 @@ public class Dialog_SettingsMenu : Dialog_Base
 
     [Header("Settings Pages")]
     [SerializeField] private Dialog_GameplaySettings _GameplaySettings;
-    [SerializeField] private Dialog_ControlsSettings _ControlsSettings;
+    [SerializeField] private Dialog_ControlsMenu _ControlsMenu;
     [SerializeField] private Dialog_AudioSettings _AudioSettings;
 
 
@@ -25,7 +25,7 @@ public class Dialog_SettingsMenu : Dialog_Base
     public void OnControlsClicked()
     {
         this.CloseDialog();
-        _ControlsSettings.OpenDialog();
+        _ControlsMenu.OpenDialog();
     }
 
     public void OnAudioClicked()
