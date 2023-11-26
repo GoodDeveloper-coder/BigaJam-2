@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 public abstract class Dialog_Base : MonoBehaviour
-{ 
+{  
     public void CloseDialog()
     {
         gameObject.SetActive(false);
@@ -16,4 +16,7 @@ public abstract class Dialog_Base : MonoBehaviour
         gameObject.SetActive(true);
     }
 
+
+
+    public bool IsOpen {  get { return gameObject.activeSelf; } }
 }
