@@ -160,14 +160,12 @@ public class MusicManager : MonoBehaviour
                                               _CrossFadeDuration,
                                               0f,
                                               _MusicVolume));
-
-        //yield return new WaitForSeconds(_CrossFadeDuration);
     }
 
     private IEnumerator FadeTrack(AudioSource audioSource, float duration, float startVolume, float endVolume)
     {
         float elapsedTime = 0f;
-
+        
 
         while (elapsedTime < duration)
         {
@@ -232,7 +230,7 @@ public class MusicManager : MonoBehaviour
 
     private void GetRandomTrack()
     {
-        if (_MusicTracks.Count < 1)
+        if (_MusicTracks.Count <= 1)
         {
             // If there is only one track, return 0 so it plays repeatedly. Otherwise we'll get stuck in the loop below forever.
             _CurrentMusicTrackIndex = 0;
@@ -270,13 +268,10 @@ public class MusicManager : MonoBehaviour
                                       .Where(s => _MusicFileExtensions.Contains(Path.GetExtension(s).ToLower())).ToList();
 
         foreach (string file in files)
-//        foreach(string file in Directory.GetFiles(musicPath, "*.*")
-//                                        .Where(s => _MusicFileExtensions.Contains(Path.GetExtension(s).ToLower())))
-
         {
             Debug.Log(file);
             string temp = Path.Combine("file://", file);
-            //WWW audioFileURL = new WWW(file);
+
             UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(temp, AudioType.UNKNOWN);
             yield return www.SendWebRequest();
 
