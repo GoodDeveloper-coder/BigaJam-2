@@ -1,43 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class FirstPlayer : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-
     [SerializeField] private float speed = 2f;
-
+    [SerializeField] private InputActionReference _moveInput;
+    [SerializeField] private InputActionReference _jumpInput;
     private Rigidbody2D _rb;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
-
+    private void Awake() 
+    {
+        _jumpInput.action.performed += Jump;
+    }
+    private void OnDestroy() 
+    {
+        _jumpInput.action.performed -= Jump;
+    }
     void Update()
     {
         Walk();
         Reflect();
-        Jump();
-        CheckingGround();
     }
 
-    //------- Function for second player walk ---------
+    //------- Function for first player walk ---------
 
     private Vector2 moveVectorFirst;
 
     void Walk()
     {
-        moveVectorFirst.x = Input.GetAxisRaw("Horizontal");
-        if (Input.GetKey(KeyCode.D))
-        {
-            _rb.velocity = new Vector2(1 * speed, _rb.velocity.y);
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            _rb.velocity = new Vector2(-1 * speed, _rb.velocity.y);
-        }
+        moveVectorFirst.x = _moveInput.action.ReadValue<float>();
+        _rb.velocity = new Vector2(moveVectorFirst.x * speed, _rb.velocity.y);
     }
 
     public bool faceRight = true;
@@ -55,9 +53,10 @@ public class FirstPlayer : MonoBehaviour
 
     public int jumpForce = 6;
 
-    void Jump()
+    void Jump(InputAction.CallbackContext ctx)
     {
-        if (onGround && Input.GetKeyDown(KeyCode.Space))
+        CheckingGround();
+        if (onGround)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
         }
