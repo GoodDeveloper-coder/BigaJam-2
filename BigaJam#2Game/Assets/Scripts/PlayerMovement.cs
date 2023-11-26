@@ -8,11 +8,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 2f;
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private InputActionReference _jumpInput;
+    [field:SerializeField] public int PlayerIndex { get; set; }
+    [SerializeField] CheckTriggerZone _gunScript;
     private Rigidbody2D _rb;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _gunScript.SetPlayer(PlayerIndex);
     }
     private void Awake() 
     {
