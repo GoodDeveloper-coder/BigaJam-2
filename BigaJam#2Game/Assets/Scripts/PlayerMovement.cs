@@ -5,9 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 2f;
+    [Header("Keybuttons")]
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private InputActionReference _jumpInput;
+    [Space]
+    [SerializeField] private float speed = 2f;
+
     private Rigidbody2D _rb;
 
     void Start()
@@ -77,4 +80,10 @@ public class PlayerMovement : MonoBehaviour
         onGround = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, Ground);
     }
     //-----------------------------------------------------------------
+
+    public void Repulsion(float power)
+    {
+        if (faceRight) _rb.AddForce(transform.right * power, ForceMode2D.Impulse); 
+        if (!faceRight) _rb.AddForce(-transform.right * power, ForceMode2D.Impulse);
+    }
 }
