@@ -10,10 +10,9 @@ public class JumpPowerup : MonoBehaviour, IPowerUp
     public IEnumerator ActivatePowerUp(PlayerMovement playerScript)
     {
         SetOffComponents();
-        float _defaultJumpForce = playerScript.jumpForce;
         playerScript.jumpForce += _addJumpForce;
         yield return new WaitForSeconds(Duration);
-        playerScript.jumpForce = _defaultJumpForce;
+        playerScript.jumpForce -= _addJumpForce;
         Destroy(gameObject);
     }
     void SetOffComponents()
