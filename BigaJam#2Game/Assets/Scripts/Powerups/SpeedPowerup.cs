@@ -10,10 +10,9 @@ public class SpeedPowerup : MonoBehaviour, IPowerUp
     public IEnumerator ActivatePowerUp(PlayerMovement playerScript)
     {
         SetOffComponents();
-        float _defaultSpeed = playerScript.speed;
         playerScript.speed += _addSpeed;
         yield return new WaitForSeconds(Duration);
-        playerScript.speed = _defaultSpeed;
+        playerScript.speed -= _addSpeed;
         Destroy(gameObject);
     }
     void SetOffComponents()
