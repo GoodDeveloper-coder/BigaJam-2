@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,11 @@ public class GunScript : MonoBehaviour
 {
     [SerializeField] private Transform _bulletSpawnPos;
     [SerializeField] private InputActionReference _shootKey;
+    [SerializeField] private InputActionReference _reloadKey;
+
+    [SerializeField] private int _gunMaxAmmo = 30;
+    [SerializeField] private int _gunAmmo = 30;
+    [SerializeField] private TextMeshProUGUI _gunAmmoText;
 
     private GameObject target;
 
@@ -32,11 +38,13 @@ public class GunScript : MonoBehaviour
     private void Awake()
     {
         _shootKey.action.performed += Shoot;
+        _reloadKey.action.performed += Reload;
     }
 
     private void OnDestroy()
     {
         _shootKey.action.performed -= Shoot;
+        _reloadKey.action.performed -= Reload;
     }
 
     //--------------Function for gun following player--------------\\ 
@@ -74,6 +82,22 @@ public class GunScript : MonoBehaviour
     //--------------Function for shooting--------------\\
     void Shoot(InputAction.CallbackContext ctx)
     {
-        _pool.GetFreeElement(_bulletSpawnPos.position, _bulletSpawnPos.rotation);
+        if (_gunAmmo > 0)
+        {
+            _gunAmmo--;
+            UpdateGunAmmotText();
+            _pool.GetFreeElement(_bulletSpawnPos.position, _bulletSpawnPos.rotation);
+        }
+    }
+
+    void Reload(InputAction.CallbackContext ctx)
+    {
+        _gunAmmo = _gunMaxAmmo;
+        UpdateGunAmmotText();
+    }
+
+    void UpdateGunAmmotText()
+    {
+        _gunAmmoText.text = $"Ammo: {_gunAmmo}/30";
     }
 }
