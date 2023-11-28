@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3215986468117033797}
   - component: {fileID: 3215986468117033796}
   - component: {fileID: 3215986468117033799}
-  - component: {fileID: 3215986468117033798}
+  - component: {fileID: 149208684751024948}
   m_Layer: 0
   m_Name: JumpPowerUp
   m_TagString: Untagged
@@ -102,7 +102,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
---- !u!114 &3215986468117033798
+--- !u!114 &149208684751024948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,12 +111,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3215986468117033793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb8c3de7b7a77e64f9ccfcb3bc0ce519, type: 3}
+  m_Script: {fileID: 11500000, guid: e3459e613d03b444596b539baba6d831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpPowerUp: 0
-  _speedPowerUp: 1
-  _speedAndJumpPowerUp: 0
-  _durationOfJumpPowerUp: 0
-  _durationOfSpeedPowerUp: 5
-  _durationOfSpeedAndJumpPowerUp: 0
+  <Duration>k__BackingField: 3
+  _addJumpForce: 5

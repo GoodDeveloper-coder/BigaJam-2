@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5292755089330492691}
   - component: {fileID: 5292755089330492690}
   - component: {fileID: 5292755089330492689}
-  - component: {fileID: 5292755089330492688}
+  - component: {fileID: 5725474993413753926}
+  - component: {fileID: 4294994676163251501}
   m_Layer: 0
   m_Name: SpeedPowerUp
   m_TagString: Untagged
@@ -102,7 +103,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
---- !u!114 &5292755089330492688
+--- !u!114 &5725474993413753926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,12 +112,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 5292755089330492703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb8c3de7b7a77e64f9ccfcb3bc0ce519, type: 3}
+  m_Script: {fileID: 11500000, guid: e940618ff3e195740b6f37c726c1cf0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpPowerUp: 1
-  _speedPowerUp: 0
-  _speedAndJumpPowerUp: 0
-  _durationOfJumpPowerUp: 5
-  _durationOfSpeedPowerUp: 0
-  _durationOfSpeedAndJumpPowerUp: 0
+  <Duration>k__BackingField: 3
+  _addSpeed: 5
+--- !u!114 &4294994676163251501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292755089330492703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3459e613d03b444596b539baba6d831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Duration>k__BackingField: 3
+  _addJumpForce: 5
