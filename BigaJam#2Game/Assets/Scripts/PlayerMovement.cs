@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     public float speed = 2f;
 
+    public int _playerIndex;
+
     private Rigidbody2D _rb;
 
     void Start()

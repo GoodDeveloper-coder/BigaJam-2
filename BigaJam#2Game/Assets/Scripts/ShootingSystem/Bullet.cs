@@ -39,7 +39,8 @@ public class Bullet : MonoBehaviour
 
         if (pm != null)
         {
-            pm.Repulsion(100f);
+            //pm.Repulsion(100f);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000f, 0f), ForceMode2D.Impulse);
         }
         _poolObject.ReturnPool();
     }
