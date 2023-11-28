@@ -9,7 +9,7 @@ public class GunScript : MonoBehaviour
     [SerializeField] private Transform _bulletSpawnPos;
     [SerializeField] private InputActionReference _shootKey;
 
-    public GameObject target;
+    private GameObject target;
 
     public bool inZone = false;
 
@@ -52,15 +52,20 @@ public class GunScript : MonoBehaviour
     //--------------Function for detecting if player is in zone--------------\\
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 9)
+        PlayerMovement _pl = collision.GetComponent<PlayerMovement>();
+
+        if (_pl != null)
         {
+            target = _pl.gameObject;
             inZone = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 9)
+        PlayerMovement _pl = collision.GetComponent<PlayerMovement>();
+
+        if (_pl != null)
         {
             inZone = false;
         }
