@@ -20,7 +20,7 @@ public class Activatable_Door : Activatable_Base
     private Transform _Door;
     private BoxCollider2D _DoorCollider;
 
-    private Vector3 _StartPosition;
+    private Vector2 _StartPosition;
 
     private float _DoorClosedPositionY;
     private float _DoorOpenPositionY;
@@ -95,7 +95,7 @@ public class Activatable_Door : Activatable_Base
 
     private IEnumerator AnimateDoor()
     {
-        if (_Door == null || _DoorCollider == null)
+        if (_Door == null)
             yield break;
 
 
