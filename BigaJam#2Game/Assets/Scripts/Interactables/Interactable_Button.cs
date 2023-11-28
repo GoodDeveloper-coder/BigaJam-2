@@ -17,7 +17,7 @@ public class Interactable_Button : Interactable_Base
 
 
     private Transform _Button;
-    private Collider2D _ButtonCollider;
+    private BoxCollider2D _ButtonCollider;
 
     private Vector3 _StartPosition;
 
@@ -38,14 +38,14 @@ public class Interactable_Button : Interactable_Base
             return;
         }
 
-        _ButtonCollider = _Button.GetComponent<Collider2D>();
+        _ButtonCollider = _Button.GetComponent<BoxCollider2D>();
 
         _StartPosition = _Button.localPosition;
 
         if (_ButtonCollider != null)
         {
             _ButtonUnpressedPositionY = _Button.transform.localPosition.y;
-            _ButtonPressedPositionY = _ButtonUnpressedPositionY - (_ButtonCollider.bounds.size.y - _Lip);
+            _ButtonPressedPositionY = _ButtonUnpressedPositionY - (_ButtonCollider.size.y * _Button.transform.localScale.y - _Lip);
         }
     }
 

@@ -18,7 +18,7 @@ public class Activatable_Door : Activatable_Base
 
 
     private Transform _Door;
-    private Collider2D _DoorCollider;
+    private BoxCollider2D _DoorCollider;
 
     private Vector3 _StartPosition;
 
@@ -39,14 +39,14 @@ public class Activatable_Door : Activatable_Base
             return;
         }
 
-        _DoorCollider = _Door.GetComponent<Collider2D>();
-
+        _DoorCollider = _Door.GetComponent<BoxCollider2D>();
         _StartPosition = _Door.localPosition;
 
-        if (_DoorCollider != null)
+        if (_DoorCollider != null )
         {
             _DoorClosedPositionY = _Door.transform.localPosition.y;
-            _DoorOpenPositionY = _DoorClosedPositionY - (_DoorCollider.bounds.size.y - _Lip);
+
+            _DoorOpenPositionY = _DoorClosedPositionY - (_DoorCollider.size.y * _Door.transform.localScale.y - _Lip);
         }
     }
 
