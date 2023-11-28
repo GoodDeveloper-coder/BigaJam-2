@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private InputActionReference _jumpInput;
     [Space]
-    [SerializeField] private float speed = 2f;
+    public float speed = 2f;
 
     private Rigidbody2D _rb;
 
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
     //------- Function for jump ---------
 
-    public int jumpForce = 6;
+    public float jumpForce = 6;
 
     void Jump(InputAction.CallbackContext ctx)
     {
