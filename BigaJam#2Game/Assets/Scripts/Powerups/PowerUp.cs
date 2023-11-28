@@ -38,8 +38,8 @@ public class PowerUp : MonoBehaviour
 
             if (_speedAndJumpPowerUp)
             {
-                speedAndJumpPowerUp(_pl);
                 StartCoroutine(speedAndJumpPowerUp(_pl));
+                SetOffComponents();
             }
         }
     }
