@@ -114,5 +114,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3459e613d03b444596b539baba6d831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Duration>k__BackingField: 3
+  <Duration>k__BackingField: 4
   _addJumpForce: 5

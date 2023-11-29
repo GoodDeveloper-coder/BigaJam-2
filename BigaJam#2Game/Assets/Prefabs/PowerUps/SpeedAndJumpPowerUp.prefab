@@ -114,5 +114,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e940618ff3e195740b6f37c726c1cf0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Duration>k__BackingField: 3
+  <Duration>k__BackingField: 5
   _addSpeed: 5
