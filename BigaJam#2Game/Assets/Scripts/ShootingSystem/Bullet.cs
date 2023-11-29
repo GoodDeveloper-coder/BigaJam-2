@@ -41,6 +41,7 @@ public class Bullet : MonoBehaviour
         {
             //pm.Repulsion(100f);
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000f, 0f), ForceMode2D.Impulse);
+            pm.TakeDamage();
         }
         _poolObject.ReturnPool();
     }
