@@ -21,10 +21,13 @@ public class GunScript : MonoBehaviour
 
     private Pool _pool;
 
+    private Animator _anim;
+
     // Start is called before the first frame update
     void Start()
     {
         _pool = GetComponent<Pool>();
+        _anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -87,6 +90,7 @@ public class GunScript : MonoBehaviour
             _gunAmmo--;
             UpdateGunAmmotText();
             _pool.GetFreeElement(_bulletSpawnPos.position, _bulletSpawnPos.rotation);
+            _anim.SetTrigger("Shoot");
         }
     }
 
