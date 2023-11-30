@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private InputActionReference _jumpInput;
     [Space]
+
+    [SerializeField]private GameObject _swapGun;
+
     private Animator _anim;
 
     public float speed = 2f;
@@ -55,8 +58,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((moveVectorFirst.x > 0 && !faceRight) || (moveVectorFirst.x < 0 && faceRight))
         {
-            if (faceRight) GetComponent<SpriteRenderer>().flipX = true;
-            if (!faceRight) GetComponent<SpriteRenderer>().flipX = false;
+            if (faceRight)
+            {
+                GetComponent<SpriteRenderer>().flipX = true; 
+                _swapGun.transform.localScale = new Vector3(-1f, 1f, 1f);
+            }
+
+            if (!faceRight) {
+                GetComponent<SpriteRenderer>().flipX = false;
+                _swapGun.transform.localScale = new Vector3(1f, 1f, 1f);
+            } 
+
             //transform.localScale *= new Vector2(-1, 1);
             faceRight = !faceRight;
         }
