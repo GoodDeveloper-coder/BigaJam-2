@@ -130,38 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7071708981969627941, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7071708981969627941, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7071708981969627941, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1558
-      objectReference: {fileID: 0}
-    - target: {fileID: 7071708981969627941, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 746
-      objectReference: {fileID: 0}
-    - target: {fileID: 7071708981969627941, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 779
-      objectReference: {fileID: 0}
-    - target: {fileID: 7071708981969627941, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -186.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7071708982396123604, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7071708982421694660, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
       propertyPath: m_Name
       value: Cut Scene Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7071708982421694663, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
+      propertyPath: _CutSceneContent
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a4564a5361a56b498fca1f323d778a0, type: 2}
     - target: {fileID: 7071708982421694715, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -245,14 +221,6 @@ PrefabInstance:
     - target: {fileID: 7071708982421694715, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7071708982663618477, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7071708982663618477, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b5896b0bcc7e234f9e0a81f7497f105, type: 3}

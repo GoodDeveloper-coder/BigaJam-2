@@ -79,13 +79,7 @@ public class CutScenePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayAfter(5f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+       
     }
 
 
@@ -401,10 +395,7 @@ public class CutScenePlayer : MonoBehaviour
     {
         if (_CurrentPage.Text.Length == 0)
             yield break;
-
-
-        int index = 0;
-        
+      
 
         GetTextTypingCharDelays(out float normalDelay, out float fastDelay);
         WaitForSeconds waitNormalDelay = new WaitForSeconds(normalDelay);

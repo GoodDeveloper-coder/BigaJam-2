@@ -65,9 +65,6 @@ public class CutSceneContent : ScriptableObject
 
 
 
-    private ListDefaultValuer<CutScenePageContent> _DefaultValuer;
-
-
 
     public CutSceneContent()
     {
@@ -83,9 +80,5 @@ public class CutSceneContent : ScriptableObject
         DefaultDisplaySettings = null;
     }
 
-    private void OnValidate()
-    {
-        //ListDefaultValuer<CutScenePageContent>.OnValidate(ref _DefaultValuer, Pages, DefaultValuer.Modes.INITIALISE_DEFAULTS_ON_EVERY_NEW_INSTANCE_ADDED);
-    }
 }
 

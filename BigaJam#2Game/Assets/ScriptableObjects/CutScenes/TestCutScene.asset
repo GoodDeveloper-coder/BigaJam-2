@@ -17,8 +17,7 @@ MonoBehaviour:
   CanSkipCutScene: 1
   SkipCutSceneInputAction: {fileID: 0}
   BackgroundMusicVolume: 1
-  BackgroundMusic:
-  - {fileID: 8300000, guid: 8107a9d8cbc16be4f9bf49490dd1cb00, type: 3}
+  BackgroundMusic: []
   DefaultPageFadeInDuration: 0.5
   DefaultPageFadeOutDuration: 0.5
   DefaultPageDisplayTime: 10
