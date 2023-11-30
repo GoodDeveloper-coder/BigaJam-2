@@ -49,7 +49,7 @@ public class GunScript : MonoBehaviour
         _shootKey.action.performed -= Shoot;
         _reloadKey.action.performed -= Reload;
     }
-
+    
     //--------------Function for gun following player--------------\\ 
     void LookAtTarget()
     {
@@ -81,7 +81,7 @@ public class GunScript : MonoBehaviour
             inZone = false;
         }
     }
-
+    
     //--------------Function for shooting--------------\\
     void Shoot(InputAction.CallbackContext ctx)
     {
