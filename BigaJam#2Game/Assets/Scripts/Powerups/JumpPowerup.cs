@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class JumpPowerup : MonoBehaviour, IPowerUp
 {
     [field: SerializeField] public float Duration { get; set; }
     [SerializeField] private float _addJumpForce;
+
+    public event Action OnPickedUp;
 
     public IEnumerator ActivatePowerUp(PlayerMovement playerScript)
     {
@@ -24,5 +27,6 @@ public class JumpPowerup : MonoBehaviour, IPowerUp
     {
         var pm = other.gameObject.GetComponent<PlayerMovement>();
         if (pm != null) StartCoroutine(ActivatePowerUp(pm));
+        OnPickedUp?.Invoke();
     }
 }

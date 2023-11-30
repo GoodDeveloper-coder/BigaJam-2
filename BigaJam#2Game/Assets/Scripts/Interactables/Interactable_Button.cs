@@ -19,7 +19,7 @@ public class Interactable_Button : Interactable_Base
     private Transform _Button;
     private BoxCollider2D _ButtonCollider;
 
-    private Vector3 _StartPosition;
+    private Vector2 _StartPosition;
 
     private float _ButtonUnpressedPositionY;
     private float _ButtonPressedPositionY;
@@ -52,7 +52,8 @@ public class Interactable_Button : Interactable_Base
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (_StartActivated)
+            _Button.localPosition = new Vector2(_StartPosition.x, _ButtonPressedPositionY);
     }
 
     // Update is called once per frame
@@ -93,7 +94,7 @@ public class Interactable_Button : Interactable_Base
 
     private IEnumerator AnimateButton()
     {
-        if (_Button == null || _ButtonCollider == null)
+        if (_Button == null)
             yield break;
 
 

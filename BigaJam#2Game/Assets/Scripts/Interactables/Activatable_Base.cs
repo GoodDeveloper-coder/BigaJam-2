@@ -27,6 +27,8 @@ public abstract class Activatable_Base : MonoBehaviour, IActivatable
 
     protected void Awake()
     {
+        IsActivated = _StartActivated;
+
         // Remove any duplicate targets specified in the inspector.
         RemoveDuplicateTargets();
     }
@@ -37,7 +39,6 @@ public abstract class Activatable_Base : MonoBehaviour, IActivatable
 
         if (IsActivated == !_StartActivated)
             return;
-
 
         IsActivated = !_StartActivated;
         
@@ -53,7 +54,7 @@ public abstract class Activatable_Base : MonoBehaviour, IActivatable
 
     public virtual void Deactivate(GameObject sender)
     {
-        if (IsActivated = _StartActivated)
+        if (IsActivated == _StartActivated)
             return;
 
 
@@ -61,7 +62,6 @@ public abstract class Activatable_Base : MonoBehaviour, IActivatable
 
         if (CurrentActivationsCount > 0 || StayActivatedForever)
             return;
-
 
 
         IsActivated = _StartActivated;

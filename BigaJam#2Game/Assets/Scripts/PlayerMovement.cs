@@ -9,13 +9,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private InputActionReference _jumpInput;
     [Space]
+    private Animator _anim;
+
     public float speed = 2f;
+
+    public int _playerIndex;
 
     private Rigidbody2D _rb;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
         //_gunScript.SetPlayer(PlayerIndex);
     }
     private void Awake() 
@@ -30,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Walk();
         Reflect();
+        CheckingGround();
     }
 
     //------- Function for first player walk ---------
@@ -39,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     void Walk()
     {
         moveVectorFirst.x = _moveInput.action.ReadValue<float>();
+        _anim.SetFloat("moveX", Mathf.Abs(moveVectorFirst.x));
         _rb.velocity = new Vector2(moveVectorFirst.x * speed, _rb.velocity.y);
     }
 
@@ -61,7 +68,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump(InputAction.CallbackContext ctx)
     {
-        CheckingGround();
         if (onGround)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
@@ -78,6 +84,22 @@ public class PlayerMovement : MonoBehaviour
     void CheckingGround()
     {
         onGround = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, Ground);
+
+        _anim.SetBool("onGround", onGround);
+    }
+    //-----------------------------------------------------------------
+
+    //------- Function for take players damage ---------
+    public void TakeDamage()
+    {
+        StartCoroutine(TakeDamageTimer());
+    }
+
+    IEnumerator TakeDamageTimer()
+    {
+        _anim.SetBool("Damage", true);
+        yield return new WaitForSeconds(0.2f);
+        _anim.SetBool("Damage", false);
     }
     //-----------------------------------------------------------------
 
