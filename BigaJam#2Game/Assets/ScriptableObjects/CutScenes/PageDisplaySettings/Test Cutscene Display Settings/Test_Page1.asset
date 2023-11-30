@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dfc042cfe664754cabf6a21eea29032, type: 3}
+  m_Name: Test_Page1
+  m_EditorClassIdentifier: 
+  Page:
+    FadeInDuration: -1
+    FadeOutDuration: -1
+    DisplayTime: -1
+  Image:
+    TintColor:
+      serializedVersion: 2
+      rgba: 4294967295
+  Text:
+    Font: {fileID: 0}
+    FontSize: 30
+    FontStyle: 0
+    Alignment: 257
+    Color:
+      serializedVersion: 2
+      rgba: 4278190335
+    ColorGradient: {fileID: 0}
+    WidthPercentage: 0
+    PaddingAbove: 30
+    DisplayMode: 1
+    TypingAnimationSound: {fileID: 0}
+    TypingAnimationSoundVolume: 1
+    CanSpeedUpText: 1
+    CanSkipPage: 1
+    TypingAnimationNormalDelayPerLetter: 0.1
+    TypingAnimationFastDelayPerLetter: 0.02
+  BackgroundColors:
+    BackgroundColor:
+      serializedVersion: 2
+      rgba: 4278190080
+    TopHalfOfScreenBackgroundColor:
+      serializedVersion: 2
+      rgba: 0
+    BottomHalfOfScreenBackgroundColor:
+      serializedVersion: 2
+      rgba: 0
+    FadeColor:
+      serializedVersion: 2
+      rgba: 4278190080
