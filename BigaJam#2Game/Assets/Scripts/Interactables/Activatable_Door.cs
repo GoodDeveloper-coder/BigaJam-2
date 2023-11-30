@@ -8,6 +8,8 @@ using UnityEngine;
 [Serializable]
 public class Activatable_Door : Activatable_Base
 {
+    [Header("Door Settings")]
+
     [Tooltip("How fast the door will move in units per second when opened/closed.")]
     [Min(0f)]
     [SerializeField] private float _MoveSpeed = 0.5f;
@@ -126,8 +128,6 @@ public class Activatable_Door : Activatable_Base
     public override void Deactivate(GameObject sender)
     {
         base.Deactivate(sender);
-
-        StopAllCoroutines();
 
         HandleCoroutines();
     }

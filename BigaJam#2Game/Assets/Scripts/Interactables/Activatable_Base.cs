@@ -7,6 +7,8 @@ using UnityEngine;
 
 public abstract class Activatable_Base : MonoBehaviour, IActivatable
 {
+    [Header("IActivatable Settings")]
+
     [Tooltip("Any targets specified in this list will be activated/deactivated whenever this object is activated.")]
     [SerializeField] public List<Activatable_Base> _Targets;
 

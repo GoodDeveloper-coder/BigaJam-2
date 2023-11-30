@@ -208,13 +208,6 @@ public class CutScenePlayer : MonoBehaviour
         _PageFadePanelBackground.gameObject.SetActive(false);
     }
 
-    private IEnumerator PlayCutsceneAfter(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        yield return StartCoroutine(PlayCutScene());
-    }
-
     private void InitCutscenePlayback()
     {
         StartCoroutine(PlayBackgroundMusic());
@@ -596,8 +589,10 @@ public class CutScenePlayer : MonoBehaviour
 
     private bool IsAnyKeyOrButtonPressed()
     {
-        return Keyboard.current.anyKey.isPressed || 
-               Gamepad.current.allControls.Any(x => x is ButtonControl button && x.IsPressed() && !x.synthetic);
+        bool isKeyboardKeyPressed = Keyboard.current != null && Keyboard.current.anyKey.isPressed;
+        bool isGamepadButtonPressed = Gamepad.current != null && Gamepad.current.allControls.Any(x => x is ButtonControl button && x.IsPressed() && !x.synthetic);
+
+        return isKeyboardKeyPressed || isGamepadButtonPressed;
     }
 
     private bool CanSpeedUpText()
