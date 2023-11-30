@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Linq;
 using UnityEngine;
 
 
@@ -26,10 +26,13 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (IsPowerup(collision, out IPowerUp powerup))
+        if (IsPowerup(collision, out List<IPowerUp> powerups))
         {
             _CurrentInteractedObjects.Add(collision.gameObject);
-            powerup.ActivatePowerUp(_PlayerMovement);
+            
+            // Activate all powerups that are on the object we hit.
+            foreach (IPowerUp powerup in powerups)
+                powerup.ActivatePowerUp(_PlayerMovement);
         }
     }
 
@@ -40,11 +43,11 @@ public class PlayerInteract : MonoBehaviour
     }
 
 
-    private bool IsPowerup(Collider2D collider, out IPowerUp powerup)
-    {
-        powerup = collider.GetComponent<IPowerUp>();
+    private bool IsPowerup(Collider2D collider, out List<IPowerUp> powerups)
+    {        
+        powerups = collider.GetComponents<IPowerUp>().ToList();
 
-        return powerup != null;
+        return powerups.Count > 0;
     }
 
 
