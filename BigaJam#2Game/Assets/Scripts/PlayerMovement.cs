@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Keybuttons")]
     [SerializeField] private InputActionReference _moveInput;
+    [SerializeField] private InputActionReference _dashInput;
     [SerializeField] private InputActionReference _jumpInput;
     [Space]
 
@@ -14,11 +15,15 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator _anim;
 
-    public float speed = 2f;
+    public float walkSpeed = 2f;
+    public float dashSpeed = 4f;
 
     public int _playerIndex;
 
+    private Vector2 _MoveVector;
+
     private Rigidbody2D _rb;
+
 
     void Start()
     {
@@ -36,7 +41,16 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        Walk();
+        _MoveVector.x = _moveInput.action.ReadValue<float>();
+
+        if (_MoveVector.x != 0f && !_dashInput.action.IsPressed())
+            Walk();
+        else if (_dashInput.action.IsPressed())
+            Dash();
+        else
+            Stop();
+
+
         Reflect();
         CheckingGround();
     }
@@ -47,16 +61,31 @@ public class PlayerMovement : MonoBehaviour
 
     void Walk()
     {
-        moveVectorFirst.x = _moveInput.action.ReadValue<float>();
-        _anim.SetFloat("moveX", Mathf.Abs(moveVectorFirst.x));
-        _rb.velocity = new Vector2(moveVectorFirst.x * speed, _rb.velocity.y);
+        Move(walkSpeed);
+    }
+
+    void Dash()
+    {
+        Move(dashSpeed);
+    }
+
+    private void Stop()
+    {
+        _rb.velocity = new Vector2(0f, _rb.velocity.y);
+        _MoveVector = Vector2.zero;
+    }
+
+    private void Move(float speed)
+    {
+        _anim.SetFloat("moveX", Mathf.Abs(_MoveVector.x));
+        _rb.velocity = new Vector2(_MoveVector.x * speed, _rb.velocity.y);
     }
 
     public bool faceRight = true;
 
     void Reflect()
     {
-        if ((moveVectorFirst.x > 0 && !faceRight) || (moveVectorFirst.x < 0 && faceRight))
+        if ((_MoveVector.x > 0 && !faceRight) || (_MoveVector.x < 0 && faceRight))
         {
             if (faceRight)
             {

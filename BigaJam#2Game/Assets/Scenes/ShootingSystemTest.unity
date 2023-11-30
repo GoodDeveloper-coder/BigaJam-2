@@ -4868,6 +4868,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8806082460733332596, guid: a61676df7c70a4043ae69cd6fcce8311, type: 3}
   m_PrefabInstance: {fileID: 2827392216944011713}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2827392216944011715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5621661127260309592, guid: a61676df7c70a4043ae69cd6fcce8311, type: 3}
+  m_PrefabInstance: {fileID: 2827392216944011713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2827392216944011716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2827392216944011715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3459e613d03b444596b539baba6d831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Duration>k__BackingField: 5
+  _addJumpForce: 5
 --- !u!1001 &3215986466762967730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5073,5 +5092,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedPowerUp
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4294994676163251501, guid: 7e302592ef1f33240b6c095bcedd8ee7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7e302592ef1f33240b6c095bcedd8ee7, type: 3}

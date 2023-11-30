@@ -226,6 +226,14 @@ PrefabInstance:
       propertyPath: _swapGun
       value: 
       objectReference: {fileID: 1767735113}
+    - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: dashSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: _dashInput
+      value: 
+      objectReference: {fileID: 1231339833322790905, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
 --- !u!1 &93757673
@@ -661,7 +669,7 @@ MonoBehaviour:
   _Targets: []
   _StartActivated: 0
   _StayActivatedForever: 0
-  _MoveSpeed: 0.5
+  _DestinationSelectionMode: 0
   _TeleportDestinations:
   - {fileID: 1069276523}
 --- !u!61 &306014669
@@ -757,6 +765,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &487912564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5621661127260309592, guid: a61676df7c70a4043ae69cd6fcce8311, type: 3}
+  m_PrefabInstance: {fileID: 2827392216944011713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &558863658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,7 +1235,7 @@ MonoBehaviour:
   _Targets: []
   _StartActivated: 0
   _StayActivatedForever: 0
-  _MoveSpeed: 0.5
+  _DestinationSelectionMode: 0
   _TeleportDestinations:
   - {fileID: 1998884331}
 --- !u!61 &1069276524
@@ -5100,7 +5113,7 @@ MonoBehaviour:
   _Targets: []
   _StartActivated: 0
   _StayActivatedForever: 0
-  _MoveSpeed: 0.5
+  _DestinationSelectionMode: 0
   _TeleportDestinations:
   - {fileID: 1069276523}
   - {fileID: 306014668}
@@ -5259,6 +5272,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8806082460733332596, guid: a61676df7c70a4043ae69cd6fcce8311, type: 3}
   m_PrefabInstance: {fileID: 2827392216944011713}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2827392216944011718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487912564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3459e613d03b444596b539baba6d831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Duration>k__BackingField: 5
+  _addJumpForce: 5
 --- !u!1001 &3215986466762967730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5400,6 +5427,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1041855975}
     - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: dashSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: _dashInput
+      value: 
+      objectReference: {fileID: -8320172353991480734, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
+    - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
       propertyPath: _jumpInput
       value: 
       objectReference: {fileID: 1575895743049815937, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
@@ -5464,5 +5499,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedPowerUp
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4294994676163251501, guid: 7e302592ef1f33240b6c095bcedd8ee7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7e302592ef1f33240b6c095bcedd8ee7, type: 3}
