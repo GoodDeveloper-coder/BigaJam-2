@@ -23,13 +23,14 @@ using UnityEngine;
 [Serializable]
 public class Activatable_Lift : Activatable_Base
 {
+    [Header("Lift Settings")]
+
     [Tooltip("How fast the door will move in units per second when opened/closed.")]
     [Min(0f)]
     [SerializeField] private float _MoveSpeed = 0.5f;
 
     [Tooltip("If this option is on, then the lift will keep moving back and forth as long as it is being activated. Otherwise it will just stop when it reaches its end point, and move back when deactivated.")]
     [SerializeField] private bool _MoveBackAndForthForeverWhileActivated = false;
-
 
     [SerializeField] private GameObject _StartPoint;
     [SerializeField] private GameObject _EndPoint;
@@ -214,8 +215,6 @@ public class Activatable_Lift : Activatable_Base
     public override void Deactivate(GameObject sender)
     {
         base.Deactivate(sender);
-
-        StopAllCoroutines();
 
         HandleCoroutines();
     }
