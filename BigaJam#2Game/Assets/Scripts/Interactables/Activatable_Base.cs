@@ -99,6 +99,12 @@ public abstract class Activatable_Base : MonoBehaviour, IActivatable
 
         foreach (Activatable_Base target in _Targets)
         {
+            if (target == null)
+            {
+                Debug.LogWarning($"IActivatable \"{gameObject.name}\" has a null entry in its targets list!");
+                continue;
+            }
+
             if (!noDuplicates.Contains(target))
                 noDuplicates.Add(target);
 

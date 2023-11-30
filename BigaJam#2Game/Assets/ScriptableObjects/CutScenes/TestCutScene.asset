@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01831d79c92cda49923598c5f22ad9a, type: 3}
+  m_Name: TestCutScene
+  m_EditorClassIdentifier: 
+  CutsceneFadeInTime: 1
+  CutsceneFadeOutTime: 1
+  CanSkipCutScene: 1
+  SkipCutSceneInputAction: {fileID: 0}
+  BackgroundMusicVolume: 1
+  BackgroundMusic: []
+  DefaultPageFadeInDuration: 0.5
+  DefaultPageFadeOutDuration: 0.5
+  DefaultPageDisplayTime: 10
+  DefaultDisplaySettings: {fileID: 11400000, guid: a9fb899bb231f814e8fad38ec7335bbc, type: 2}
+  Pages:
+  - DisplaySettings: {fileID: 11400000, guid: 1420ec3f2476ffb469a7c9623d721f60, type: 2}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: Once upon a time in a far away world plagued by cyclic chaos... Something
+      horrendous happened!
+  - DisplaySettings: {fileID: 11400000, guid: 3ba2924ae86d47447ab39ed76e08cda8, type: 2}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: "A group assembled to overcome the discord...\nBut then something else
+      happened! \n\nIt was great; You should've seen it!"
+  - DisplaySettings: {fileID: 11400000, guid: 4c16c8dba98272443862c10d559e0f63, type: 2}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: "The legedary group emerged victorious, \n\nand wveryone lived happily
+      ever after!"
+  - DisplaySettings: {fileID: 11400000, guid: 2d22be9104f06a3489866557f8f58c2b, type: 2}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: THE END
