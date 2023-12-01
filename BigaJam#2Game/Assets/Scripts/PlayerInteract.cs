@@ -10,18 +10,9 @@ public class PlayerInteract : MonoBehaviour
 
     private PlayerMovement _PlayerMovement;
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
         _PlayerMovement = GetComponent<PlayerMovement>();    
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,8 +40,6 @@ public class PlayerInteract : MonoBehaviour
 
         return powerups.Count > 0;
     }
-
-
 
     public int InteractingObjectsCount { get { return _CurrentInteractedObjects.Count; } }
 }
