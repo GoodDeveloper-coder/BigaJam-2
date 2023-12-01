@@ -11,8 +11,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference _jumpInput;
     [Space]
 
-    [SerializeField]private GameObject _swapGun;
-
     private Animator _anim;
 
     public float walkSpeed = 2f;
@@ -71,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Stop()
     {
+        _anim.SetFloat("moveX", Mathf.Abs(_MoveVector.x));
         _rb.velocity = new Vector2(0f, _rb.velocity.y);
         _MoveVector = Vector2.zero;
     }
@@ -90,15 +89,12 @@ public class PlayerMovement : MonoBehaviour
             if (faceRight)
             {
                 GetComponent<SpriteRenderer>().flipX = true; 
-                _swapGun.transform.localScale = new Vector3(-1f, 1f, 1f);
             }
 
             if (!faceRight) {
                 GetComponent<SpriteRenderer>().flipX = false;
-                _swapGun.transform.localScale = new Vector3(1f, 1f, 1f);
             } 
 
-            //transform.localScale *= new Vector2(-1, 1);
             faceRight = !faceRight;
         }
     }
