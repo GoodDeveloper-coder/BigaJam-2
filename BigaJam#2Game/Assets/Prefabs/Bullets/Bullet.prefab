@@ -152,3 +152,4 @@ MonoBehaviour:
   _speed: 2000
   _lifeTime: 3
   _powerWhenTouchWithPlayer: 10000
+  _knockBackMultiplier: 0.5

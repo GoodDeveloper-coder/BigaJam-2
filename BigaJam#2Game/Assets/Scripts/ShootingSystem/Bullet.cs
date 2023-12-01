@@ -8,9 +8,12 @@ public class Bullet : MonoBehaviour
     [SerializeField] float _speed;
     [SerializeField] float _lifeTime;
     [SerializeField] float _powerWhenTouchWithPlayer;
+    [Tooltip("This multiplier affects how strongly the bullet knocks back a player.")]
+    [SerializeField] float _knockBackForce = 1f;
 
     private Rigidbody2D rb;
     private PoolObject _poolObject;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +42,8 @@ public class Bullet : MonoBehaviour
 
         if (pm != null)
         {
-            //pm.Repulsion(100f);
-            //collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(10f, 0f), ForceMode2D.Impulse);
+            // Apply _knockBackForce force per second.
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(_knockBackForce * Time.deltaTime, 0f), ForceMode2D.Impulse);
             pm.TakeDamage();
         }
         _poolObject.ReturnPool();

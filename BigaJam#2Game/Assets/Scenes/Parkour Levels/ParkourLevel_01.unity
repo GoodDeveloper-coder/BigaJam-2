@@ -4554,6 +4554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 7523068783744187035, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: m_Mass
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
 --- !u!1001 &6799531784314194478
@@ -4583,6 +4587,14 @@ PrefabInstance:
       propertyPath: _energyImage
       value: 
       objectReference: {fileID: 1235682849}
+    - target: {fileID: 2982760544101411578, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _decellerationRate
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799531782699075767, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: m_Mass
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 6799531782699075769, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
       propertyPath: m_RootOrder
       value: 1

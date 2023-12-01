@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Tooltip("This multiplier effects how fast the player's dash uses energy.")]
     public float _dashEnergyCostMultiplier = 3f;
+    [Tooltip("How quickly the player decellerates.")]
+    public float _decellerationRate = 2f;
 
 
     private Animator _anim;
@@ -81,8 +83,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Stop()
     {
-        _anim.SetFloat("moveX", Mathf.Abs(_MoveVector.x));
-        _rb.velocity = new Vector2(0f, _rb.velocity.y);
+        // Using rb.velocity here makes player still animate during knockback.
+        _anim.SetFloat("moveX", Mathf.Abs(_rb.velocity.normalized.x));
+
+        float decelAmount = _decellerationRate * Time.deltaTime;
+        if (_rb.velocity.x > 0f)
+            decelAmount = -decelAmount;
+
+        _rb.velocity = new Vector2(_rb.velocity.x + decelAmount, _rb.velocity.y);
         _MoveVector = Vector2.zero;
     }
 
