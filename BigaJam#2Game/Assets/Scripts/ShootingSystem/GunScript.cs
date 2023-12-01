@@ -90,9 +90,9 @@ public class GunScript : MonoBehaviour
     //--------------Function for shooting--------------\\
     void Shoot(InputAction.CallbackContext ctx)
     {
-        if (_playerStats.Ammo > 0)
+        if (_gunAmmo > 0)
         {
-            _playerStats.RemoveAmmo(1);
+            _gunAmmo--;
             _pool.GetFreeElement(_bulletSpawnPos.position, _bulletSpawnPos.rotation);
             _anim.SetTrigger("Shoot");
         }
@@ -102,6 +102,17 @@ public class GunScript : MonoBehaviour
     {
         if (_canReload)
         {
+            if (_playerStats.HasInfiniteAmmo || _playerStats.Ammo >= _gunMaxAmmo)
+            {
+                _gunAmmo = _gunMaxAmmo;
+                _playerStats.RemoveAmmo(_gunMaxAmmo);
+            }
+            else if (_playerStats.Ammo > 0)
+            {
+                _gunAmmo = _playerStats.Ammo;
+                _playerStats.RemoveAmmo(_playerStats.Ammo);
+            }
+
             _playerStats.AddAmmo(_gunMaxAmmo);
             _canReload = false;
             Invoke("UnlockReload", 5.0f);
