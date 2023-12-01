@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class Pool : MonoBehaviour
@@ -9,14 +10,22 @@ public class Pool : MonoBehaviour
 
     [Space(height: 10)][SerializeField] Transform _container;
     [SerializeField] private int _minCapacity;
-    [SerializeField] private int _maxCapacity;
+    [SerializeField] private int _maxCapacity = 100;
     [Space(height: 10)][SerializeField] private bool _autoExpand;
 
     private List<PoolObject> _pool;
 
-    private void Start()
+    private void Awake()
     {
         CreatePool();
+
+        if (_container = null)
+            _container = transform;
+    }
+
+    private void Start()
+    {
+
     }
 
     private void OnValidate()

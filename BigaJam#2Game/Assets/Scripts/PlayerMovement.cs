@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         _PlayerStats = GetComponent<PlayerStats>();
         //_gunScript.SetPlayer(PlayerIndex);
     }
-    private void OnDestroy() 
+    private void OnDestroy()
     {
         _jumpInput.action.performed -= Jump;
     }
@@ -85,8 +85,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Stop()
     {
+        // Velocity needs to be less than this value for the walk animation to stop.
+        float animThreshold = 0.1f;
+
         // Using rb.velocity here makes player still animate during knockback.
-        _anim.SetFloat("moveX", Mathf.Abs(_rb.velocity.normalized.x));
+        float moveAmount = _rb.velocity.x;
+        if (moveAmount < animThreshold && moveAmount > -animThreshold)
+            moveAmount = 0f;
+        _anim.SetFloat("moveX", Mathf.Abs(moveAmount));
 
         float decelAmount = _decellerationRate * Time.deltaTime;
         if (_rb.velocity.x > 0f)
@@ -110,12 +116,12 @@ public class PlayerMovement : MonoBehaviour
         {
             if (faceRight)
             {
-                GetComponent<SpriteRenderer>().flipX = true; 
+                GetComponent<SpriteRenderer>().flipX = true;
             }
 
             if (!faceRight) {
                 GetComponent<SpriteRenderer>().flipX = false;
-            } 
+            }
 
             faceRight = !faceRight;
         }
@@ -173,4 +179,8 @@ public class PlayerMovement : MonoBehaviour
     {
         _LastCheckpoint = checkPoint;
     }
+
+
+
+    public PlayerStats PlayerStats {get { return _PlayerStats; } }
 }

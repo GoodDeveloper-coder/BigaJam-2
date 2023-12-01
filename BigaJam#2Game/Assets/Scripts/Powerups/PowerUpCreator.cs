@@ -4,27 +4,40 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
+[RequireComponent(typeof(Pool))]
 public class PowerUpCreator : MonoBehaviour
 {
-    [SerializeField] private float _reloadTime;
-    [SerializeField] private GameObject _resObject;
+    [SerializeField] private float _respawnTime = 10f;
+    [SerializeField] private GameObject _resObject;   
+    
+    private Pool _pool;
+    private PoolObject _lastObjSpawned;
+
 
     private void Start()
     {
-        InitPowerUp(Instantiate(_resObject, transform.position, Quaternion.identity, transform));
+        _pool = GetComponent<Pool>();
+        SpawnPowerup();
     }
 
     IEnumerator Respawn() 
     {
-        yield return new WaitForSeconds(_reloadTime);
-        InitPowerUp(Instantiate(_resObject, transform.position, Quaternion.identity, transform));
+        yield return new WaitForSeconds(_respawnTime);
+        SpawnPowerup();
     }
-    void InitPowerUp(GameObject go)
+
+    private void SpawnPowerup()
     {
-        IPowerUp powerUp = go.GetComponent<IPowerUp>();
-        powerUp.OnPickedUp += () => { StartCoroutine(Respawn()); };
-        if (powerUp == null) { Debug.LogError("Can't find IPowerUp"); }
+        _lastObjSpawned = _pool.GetFreeElement(transform.position, transform.rotation);
+        _lastObjSpawned.GetComponent<IPowerUp>().OnPickedUp += OnPickedUp;
     }
+
+    private void OnPickedUp()
+    {
+        _lastObjSpawned.GetComponent<IPowerUp>().OnPickedUp -= OnPickedUp;
+        StartCoroutine(Respawn());
+    }
+
     private void OnDrawGizmos() {
         Gizmos.DrawSphere(transform.position, 0.25f);
     }

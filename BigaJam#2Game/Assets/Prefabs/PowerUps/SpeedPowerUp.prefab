@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5292755089330492689}
   - component: {fileID: 5725474993413753926}
   - component: {fileID: 4294994676163251501}
+  - component: {fileID: 4991895601222554465}
   m_Layer: 0
   m_Name: SpeedPowerUp
   m_TagString: Untagged
@@ -115,7 +116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e940618ff3e195740b6f37c726c1cf0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Duration>k__BackingField: 5
+  _Duration: 5
+  _DoesRespawn: 1
+  _RespawnTime: 10
+  sprite: {fileID: 0}
   _addSpeed: 5
 --- !u!114 &4294994676163251501
 MonoBehaviour:
@@ -129,5 +133,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3459e613d03b444596b539baba6d831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Duration>k__BackingField: 5
+  _Duration: 5
+  _DoesRespawn: 1
+  _RespawnTime: 10
+  sprite: {fileID: 0}
   _addJumpForce: 5
+--- !u!114 &4991895601222554465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292755089330492703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a6a3394f74c7f46b2e0113ed839708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
