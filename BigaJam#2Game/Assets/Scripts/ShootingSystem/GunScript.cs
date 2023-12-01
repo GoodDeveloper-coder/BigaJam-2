@@ -12,7 +12,6 @@ public class GunScript : MonoBehaviour
     [SerializeField] private InputActionReference _reloadKey;
 
     [SerializeField] private int _gunMaxAmmo = 30;
-    [SerializeField] private TextMeshProUGUI _gunAmmoText;
     [SerializeField] private Transform _rotateGun;
     [SerializeField] private PlayerStats _playerStats;
     public int _gunAmmo = 30;
@@ -94,7 +93,6 @@ public class GunScript : MonoBehaviour
         if (_playerStats.Ammo > 0)
         {
             _playerStats.RemoveAmmo(1);
-            UpdateGunAmmotText();
             _pool.GetFreeElement(_bulletSpawnPos.position, _bulletSpawnPos.rotation);
             _anim.SetTrigger("Shoot");
         }
@@ -105,7 +103,6 @@ public class GunScript : MonoBehaviour
         if (_canReload)
         {
             _playerStats.AddAmmo(_gunMaxAmmo);
-            UpdateGunAmmotText();
             _canReload = false;
             Invoke("UnlockReload", 5.0f);
         }
@@ -116,8 +113,4 @@ public class GunScript : MonoBehaviour
         _canReload = true;
     }
 
-    void UpdateGunAmmotText()
-    {
-        _gunAmmoText.text = $"Ammo: {_playerStats.Ammo}/30";
-    }
 }
