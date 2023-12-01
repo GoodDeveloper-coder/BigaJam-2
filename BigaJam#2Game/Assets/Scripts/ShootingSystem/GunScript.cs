@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,29 +11,36 @@ public class GunScript : MonoBehaviour
     [SerializeField] private Transform _bulletSpawnPos;
     [SerializeField] private InputActionReference _shootKey;
     [SerializeField] private InputActionReference _reloadKey;
-
-    [SerializeField] private int _gunMaxAmmo = 30;
+    [SerializeField] private InputActionReference _changeWeaponKey;
     [SerializeField] private Transform _rotateGun;
     [SerializeField] private PlayerStats _playerStats;
-    public int _gunAmmo = 30;
-
-    private GameObject target;
-
+    [SerializeField] private List<GunSO> _gunsList;
     public bool inZone = false;
 
+    private int _gunAmmo;
+    private int _gunMaxAmmo;
     private bool _canReload = true;
+    private bool _canShoot = true;
+    private int _gunIndex;
+    private float _shootCooldown;
 
+    private GameObject target;
     private Pool _pool;
-
     private Animator _anim;
+    private SpriteRenderer _sp;
 
-    // Start is called before the first frame update
     void Start()
     {
         _pool = GetComponent<Pool>();
         _anim = GetComponent<Animator>();
         _playerStats.AddAmmo(_gunMaxAmmo);
+        _sp = GetComponent<SpriteRenderer>();
         _gunAmmo = _gunMaxAmmo;
+        
+        _gunIndex = 0;
+        _sp.sprite = _gunsList[0].gunSprite;
+        _gunMaxAmmo = _gunsList[0].MaxGunAmmo;
+        _shootCooldown = _gunsList[0].Cooldown;
     }
 
     void Update()
@@ -47,6 +55,7 @@ public class GunScript : MonoBehaviour
     {
         _shootKey.action.performed += Shoot;
         _reloadKey.action.performed += Reload;
+        _changeWeaponKey.action.performed += ChangeGun;
     }
 
     private void OnDestroy()
@@ -54,7 +63,22 @@ public class GunScript : MonoBehaviour
         _shootKey.action.performed -= Shoot;
         _reloadKey.action.performed -= Reload;
     }
-    
+
+    public void ChangeGun(InputAction.CallbackContext ctx)
+    {
+        if (_gunIndex < _gunsList.Count - 1)
+        {
+            _gunIndex++;
+        }
+        else
+        {
+            _gunIndex = 0;
+        }
+        GunSO newGun = _gunsList[_gunIndex];
+        _sp.sprite = newGun.gunSprite;
+        _gunMaxAmmo = newGun.MaxGunAmmo;
+        _shootCooldown = newGun.Cooldown;
+    }
     //--------------Function for gun following player--------------\\ 
     void LookAtTarget()
     {
@@ -90,12 +114,20 @@ public class GunScript : MonoBehaviour
     //--------------Function for shooting--------------\\
     void Shoot(InputAction.CallbackContext ctx)
     {
-        if (_gunAmmo > 0)
+        if (_playerStats.Ammo > 0 && _canShoot)
         {
             _gunAmmo--;
             _pool.GetFreeElement(_bulletSpawnPos.position, _bulletSpawnPos.rotation);
-            _anim.SetTrigger("Shoot");
+            _canShoot = false;
+            StartCoroutine(ShootCooldown());
+            //_anim.SetTrigger("Shoot");
         }
+    }
+
+    private IEnumerator ShootCooldown()
+    {
+        yield return new WaitForSeconds(_shootCooldown);
+        _canShoot = true;
     }
 
     void Reload(InputAction.CallbackContext ctx)

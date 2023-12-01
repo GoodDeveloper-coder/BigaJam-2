@@ -76,7 +76,6 @@ public class PlayerMovement : MonoBehaviour
         if (_PlayerStats.Energy <= 0)
             return;
 
-
         Move(dashSpeed);
 
         // Remove speed units of energy per second.
