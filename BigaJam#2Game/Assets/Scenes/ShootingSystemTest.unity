@@ -374,7 +374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1605261445427154225, guid: f3b4bef5756bc9542b4607096f6b7294, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1605261445427154225, guid: f3b4bef5756bc9542b4607096f6b7294, type: 3}
       propertyPath: m_AnchorMax.x
@@ -491,8 +491,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 586013963}
   - {fileID: 1534376596}
+  - {fileID: 586013963}
   m_Father: {fileID: 93757677}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1021,7 +1021,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 666198567}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4475,6 +4475,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1252185407}
     - target: {fileID: 834346389, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _ammoText
+      value: 
+      objectReference: {fileID: 1959311179}
+    - target: {fileID: 834346389, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
       propertyPath: _gunScript
       value: 
       objectReference: {fileID: 267052440}
@@ -4559,6 +4563,10 @@ PrefabInstance:
       propertyPath: _hpImage
       value: 
       objectReference: {fileID: 1229197160}
+    - target: {fileID: 642480152, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _ammoText
+      value: 
+      objectReference: {fileID: 1534376597}
     - target: {fileID: 642480152, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
       propertyPath: _gunScript
       value: 

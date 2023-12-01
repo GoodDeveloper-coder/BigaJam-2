@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference _dashInput;
     [SerializeField] private InputActionReference _jumpInput;
     [Space]
+    [Tooltip("This multiplier effects how fast the player's dash uses energy.")]
+    public float _dashEnergyCostMultiplier = 3f;
+
 
     private Animator _anim;
 
@@ -21,17 +24,19 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _MoveVector;
 
     private Rigidbody2D _rb;
+    private PlayerStats _PlayerStats;
 
 
+    private void Awake()
+    {
+        _jumpInput.action.performed += Jump;
+    }
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+        _PlayerStats = GetComponent<PlayerStats>();
         //_gunScript.SetPlayer(PlayerIndex);
-    }
-    private void Awake() 
-    {
-        _jumpInput.action.performed += Jump;
     }
     private void OnDestroy() 
     {
@@ -64,7 +69,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Dash()
     {
+        if (_PlayerStats.Energy <= 0)
+            return;
+
+
         Move(dashSpeed);
+
+        // Remove speed units of energy per second.
+        _PlayerStats.RemoveEnergy(_dashEnergyCostMultiplier * dashSpeed * Time.deltaTime);
     }
 
     private void Stop()

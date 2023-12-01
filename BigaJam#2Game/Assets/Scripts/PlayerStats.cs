@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -14,7 +15,14 @@ public class PlayerStats : MonoBehaviour
     [Min(0)]
     [SerializeField] float _MaxHP = 100f;
 
+    [Header("Functionality")]
+    [Tooltip("How much HP regenerates per second.")]
+    [SerializeField] private float _HpRegenRate = 2f;
+    [Tooltip("How much energy regenerates per second.")]
+    [SerializeField] private float _EnergyRegenRate = 2f;
+
     [Header("UI")]
+    [SerializeField] private TMP_Text _ammoText;
     [SerializeField] private Image _hpImage;
     [SerializeField] private Image _energyImage;
 
@@ -29,7 +37,21 @@ public class PlayerStats : MonoBehaviour
     #region MonoBehaviour Methods
     void Start()
     {
+        AddAmmo(_MaxAmmo);
         AddHP(_MaxHP);
+        AddEnergy(_MaxEnergy);
+
+        CheckAmmoUI();
+        CheckEnergyUI();
+        CheckHPUI();
+    }
+
+    void Update()
+    {
+        if (HP < _MaxHP)
+            RegenHealth();
+        if (Energy < _MaxEnergy)
+            RegenEnergy();
     }
 
     #endregion
@@ -37,14 +59,28 @@ public class PlayerStats : MonoBehaviour
 
     void CheckHPUI() { _hpImage.fillAmount = (float)HP / _MaxHP; }
     void CheckEnergyUI() { _energyImage.fillAmount = (float)Energy / _MaxEnergy; }
-    void CheckAmmoUI() { Debug.Log(Ammo); }
+    void CheckAmmoUI() { _ammoText.text = $"{Ammo.ToString()}/30"; }
+
+    void RegenHealth()
+    {
+        // Heal _HpRegenRate health per second.
+        HP = Mathf.Clamp(HP + (_HpRegenRate * Time.deltaTime), 0f, _MaxHP);
+        CheckHPUI();
+    }
+
+    void RegenEnergy()
+    {
+        // Restore _EnergyRegenRate energy per second.
+        Energy = Mathf.Clamp(Energy + (_EnergyRegenRate * Time.deltaTime), 0f, _MaxEnergy);
+        CheckEnergyUI();
+    }
 
     public void AddAmmo(int amount)
     {
         if (IsPositive(amount))
         {
             Ammo = Mathf.Clamp(Ammo + amount, 0, _MaxAmmo);
-            Debug.Log(Ammo);
+            //Debug.Log(Ammo);
         }
         CheckAmmoUI();
     }
@@ -53,7 +89,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (IsPositive(amount))
             Ammo = Mathf.Clamp(Ammo - amount, 0, _MaxAmmo);
-            Debug.Log(Ammo);
+            //Debug.Log(Ammo);
         CheckAmmoUI();
     }
 
