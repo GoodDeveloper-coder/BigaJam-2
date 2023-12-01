@@ -33,7 +33,7 @@ public class Pool : MonoBehaviour
 
         for (int i = 0; i < _minCapacity; i++)
         {
-            CreateElement(); //він заполняє пул тут
+            CreateElement(); //пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ
         }
     }
 
