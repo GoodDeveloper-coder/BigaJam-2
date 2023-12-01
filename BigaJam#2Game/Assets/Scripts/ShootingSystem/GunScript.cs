@@ -14,6 +14,7 @@ public class GunScript : MonoBehaviour
     [SerializeField] private int _gunMaxAmmo = 30;
     [SerializeField] private int _gunAmmo = 30;
     [SerializeField] private TextMeshProUGUI _gunAmmoText;
+    [SerializeField] private Transform _rotateGun;
 
     private GameObject target;
 
@@ -57,7 +58,7 @@ public class GunScript : MonoBehaviour
         float Angle = Mathf.Atan2(look.y, look.x) * Mathf.Rad2Deg;
         Angle = Mathf.Clamp(Angle, -20, 1);
 
-        transform.Rotate(0, 0, Angle);
+        _rotateGun.Rotate(0, 0, Angle);
     }
 
     //--------------Function for detecting if player is in zone--------------\\

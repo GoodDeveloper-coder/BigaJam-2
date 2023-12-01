@@ -218,6 +218,22 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: a68c482465cafe945973ee920ef41871, type: 2}
+    - target: {fileID: 3466001778157352057, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6615074
+      objectReference: {fileID: 0}
+    - target: {fileID: 3466001778157352057, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3694265
+      objectReference: {fileID: 0}
+    - target: {fileID: 3466001778157352057, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.000000069517895
+      objectReference: {fileID: 0}
+    - target: {fileID: 3466001778157352057, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1825343
+      objectReference: {fileID: 0}
     - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
       propertyPath: speed
       value: 5
@@ -226,6 +242,18 @@ PrefabInstance:
       propertyPath: _swapGun
       value: 
       objectReference: {fileID: 1767735113}
+    - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: dashSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: walkSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: _dashInput
+      value: 
+      objectReference: {fileID: 1231339833322790905, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
 --- !u!1 &93757673
@@ -459,7 +487,6 @@ GameObject:
   - component: {fileID: 293855532}
   - component: {fileID: 293855536}
   - component: {fileID: 293855535}
-  - component: {fileID: 293855537}
   m_Layer: 9
   m_Name: Gun(1)
   m_TagString: Untagged
@@ -475,7 +502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293855530}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.21, y: -0.20000003, z: 0}
+  m_LocalPosition: {x: 1.13, y: -0.05, z: 0}
   m_LocalScale: {x: 1.1663167, y: 1.6009514, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -520,6 +547,7 @@ MonoBehaviour:
   _gunMaxAmmo: 30
   _gunAmmo: 30
   _gunAmmoText: {fileID: 1534376597}
+  _rotateGun: {fileID: 1041855976}
   inZone: 0
 --- !u!58 &293855534
 CircleCollider2D:
@@ -610,23 +638,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &293855537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293855530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0efcdadaf5c7e8459947896b09f9f6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 0}
-  _container: {fileID: 0}
-  _minCapacity: 0
-  _maxCapacity: 0
-  _autoExpand: 0
 --- !u!1 &558863658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,8 +1777,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931483947}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -1.11, y: -0.15999997, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.01, y: -0.15999997, z: 0}
   m_LocalScale: {x: 1.1663167, y: 1.6009511, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1776,7 +1787,7 @@ Transform:
   - {fileID: 247098445}
   m_Father: {fileID: 1767735114}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1931483949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1828,6 +1839,7 @@ MonoBehaviour:
   _gunMaxAmmo: 30
   _gunAmmo: 30
   _gunAmmoText: {fileID: 1959311179}
+  _rotateGun: {fileID: 1767735114}
   inZone: 0
 --- !u!212 &1931483952
 SpriteRenderer:
@@ -1870,7 +1882,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 532497246, guid: 05cced4504c7c414c938f9cc9fd1a05f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1878,7 +1890,7 @@ SpriteRenderer:
   m_Size: {x: 0.6875, y: 0.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1931483953
@@ -5000,6 +5012,22 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: a68c482465cafe945973ee920ef41871, type: 2}
+    - target: {fileID: 3466001778157352057, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.69325745
+      objectReference: {fileID: 0}
+    - target: {fileID: 3466001778157352057, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5021787
+      objectReference: {fileID: 0}
+    - target: {fileID: 3466001778157352057, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.008302383
+      objectReference: {fileID: 0}
+    - target: {fileID: 3466001778157352057, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.18253446
+      objectReference: {fileID: 0}
     - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
       propertyPath: speed
       value: 5
@@ -5008,6 +5036,18 @@ PrefabInstance:
       propertyPath: _swapGun
       value: 
       objectReference: {fileID: 1041855975}
+    - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: dashSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: walkSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: _dashInput
+      value: 
+      objectReference: {fileID: -8320172353991480734, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
     - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
       propertyPath: _jumpInput
       value: 
