@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour
 {
     #region Fields
     [Header("Max Values")]
+    [SerializeField] bool _HasInfiniteAmmo = false;
     [Min(0)]
     [SerializeField] int _MaxAmmo = 100;
     [Min(0)]
@@ -157,6 +158,10 @@ public class PlayerStats : MonoBehaviour
 
         return amount >= 0;
     }
+
+
+
+    public bool HasInfiniteAmmo { get { return _HasInfiniteAmmo; } }
 
     #endregion
 }
