@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 656922570452875563}
   - component: {fileID: 4164068929883662480}
   - component: {fileID: 4735870014131865246}
+  - component: {fileID: -3928214532911214065}
   m_Layer: 0
   m_Name: SpeedAndJumpPowerUp
   m_TagString: Untagged
@@ -114,5 +115,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e940618ff3e195740b6f37c726c1cf0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Duration>k__BackingField: 5
+  _Duration: 5
+  _DoesRespawn: 1
+  _RespawnTime: 10
+  sprite: {fileID: 0}
   _addSpeed: 5
+--- !u!114 &-3928214532911214065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5621661127260309592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a6a3394f74c7f46b2e0113ed839708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

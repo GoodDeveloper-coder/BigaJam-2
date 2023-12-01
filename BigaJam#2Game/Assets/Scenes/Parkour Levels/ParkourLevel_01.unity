@@ -540,6 +540,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 708463531, guid: d3416548f53eda54eaf8cba7e2aff5cd, type: 3}
+    - target: {fileID: 8835400480708243726, guid: f3b4bef5756bc9542b4607096f6b7294, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3b4bef5756bc9542b4607096f6b7294, type: 3}
 --- !u!224 &586013963 stripped
@@ -1014,6 +1018,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1538841554}
   - {fileID: 1673060779}
   - {fileID: 1397422583}
   - {fileID: 2827392216944011714}
@@ -1376,6 +1381,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534376595}
   m_CullTransparentMesh: 1
+--- !u!1001 &1538841553
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1237167824}
+    m_Modifications:
+    - target: {fileID: 883935376951002724, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_Name
+      value: SpeedRespawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002724, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9235568
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.60755944
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.09664983
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+--- !u!4 &1538841554 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 883935376951002727, guid: 37f190ad7d2bc76488653c2f872c647a, type: 3}
+  m_PrefabInstance: {fileID: 1538841553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1592568151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4529,13 +4608,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1237167824}
     m_Modifications:
+    - target: {fileID: 4735870014131865246, guid: a61676df7c70a4043ae69cd6fcce8311, type: 3}
+      propertyPath: _Duration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735870014131865246, guid: a61676df7c70a4043ae69cd6fcce8311, type: 3}
+      propertyPath: _DoesRespawn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5621661127260309592, guid: a61676df7c70a4043ae69cd6fcce8311, type: 3}
       propertyPath: m_Name
       value: SpeedAndJumpPowerUp
       objectReference: {fileID: 0}
     - target: {fileID: 8806082460733332596, guid: a61676df7c70a4043ae69cd6fcce8311, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8806082460733332596, guid: a61676df7c70a4043ae69cd6fcce8311, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4601,7 +4688,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3459e613d03b444596b539baba6d831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Duration>k__BackingField: 5
+  _Duration: 5
+  _DoesRespawn: 1
+  _RespawnTime: 10
+  sprite: {fileID: 0}
   _addJumpForce: 5
 --- !u!1001 &3215986466762967730
 PrefabInstance:
@@ -4610,13 +4700,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1237167824}
     m_Modifications:
+    - target: {fileID: 149208684751024948, guid: 2c74d8e0f24ac3d40ba2539b85600133, type: 3}
+      propertyPath: _Duration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 149208684751024948, guid: 2c74d8e0f24ac3d40ba2539b85600133, type: 3}
+      propertyPath: _DoesRespawn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3215986468117033793, guid: 2c74d8e0f24ac3d40ba2539b85600133, type: 3}
       propertyPath: m_Name
       value: JumpPowerUp
       objectReference: {fileID: 0}
     - target: {fileID: 3215986468117033797, guid: 2c74d8e0f24ac3d40ba2539b85600133, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3215986468117033797, guid: 2c74d8e0f24ac3d40ba2539b85600133, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4726,7 +4824,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5292755089330492691, guid: 7e302592ef1f33240b6c095bcedd8ee7, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5292755089330492691, guid: 7e302592ef1f33240b6c095bcedd8ee7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4771,6 +4869,18 @@ PrefabInstance:
     - target: {fileID: 5292755089330492703, guid: 7e302592ef1f33240b6c095bcedd8ee7, type: 3}
       propertyPath: m_Name
       value: SpeedPowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292755089330492703, guid: 7e302592ef1f33240b6c095bcedd8ee7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725474993413753926, guid: 7e302592ef1f33240b6c095bcedd8ee7, type: 3}
+      propertyPath: _Duration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725474993413753926, guid: 7e302592ef1f33240b6c095bcedd8ee7, type: 3}
+      propertyPath: _DoesRespawn
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4294994676163251501, guid: 7e302592ef1f33240b6c095bcedd8ee7, type: 3}
