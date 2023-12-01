@@ -59,7 +59,7 @@ public class PlayerStats : MonoBehaviour
 
     void CheckHPUI() { _hpImage.fillAmount = (float)HP / _MaxHP; }
     void CheckEnergyUI() { _energyImage.fillAmount = (float)Energy / _MaxEnergy; }
-    void CheckAmmoUI() { _ammoText.text = $"{Ammo.ToString()}/30"; }
+    void CheckAmmoUI() { _ammoText.text = $"{Ammo}/30"; }
 
     void RegenHealth()
     {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 public class Dialog_MainMenu : Dialog_Base
@@ -24,12 +25,12 @@ public class Dialog_MainMenu : Dialog_Base
 
     public void OnPlayParkourClicked()
     {
-        Debug.Log("Play Parkour clicked.");
+        SceneManager.LoadScene("PlayParkourMode");
     }
 
     public void OnPlayShootingClicked()
     {
-        Debug.Log("Play Shooting clicked.");
+        SceneManager.LoadScene("PlayShootingMode");
     }
 
     public void OnSettingsClicked()

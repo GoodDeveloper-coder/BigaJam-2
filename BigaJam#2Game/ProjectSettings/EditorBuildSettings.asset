@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenuScene.unity
+    guid: 2314cff0b11814047ad969b859bb3784
+  - enabled: 1
+    path: Assets/Scenes/PlayParkourMode.unity
+    guid: 3ea718b97e18457439c34d3cad959661
+  - enabled: 1
+    path: Assets/Scenes/PlayShootingMode.unity
+    guid: e57aa18aaaf8d364a800f74dc84f2f69
   m_configObjects: {}
