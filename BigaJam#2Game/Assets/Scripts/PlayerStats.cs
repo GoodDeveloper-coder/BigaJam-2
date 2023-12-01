@@ -17,7 +17,7 @@ public class PlayerStats : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Image _hpImage;
     [SerializeField] private Image _energyImage;
-    
+
     #endregion
     #region Properties
 
@@ -29,8 +29,9 @@ public class PlayerStats : MonoBehaviour
     #region MonoBehaviour Methods
     void Start()
     {
-        
+        AddHP(_MaxHP);
     }
+
     #endregion
     #region Methods
 
@@ -43,6 +44,7 @@ public class PlayerStats : MonoBehaviour
         if (IsPositive(amount))
         {
             Ammo = Mathf.Clamp(Ammo + amount, 0, _MaxAmmo);
+            Debug.Log(Ammo);
         }
         CheckAmmoUI();
     }
@@ -51,6 +53,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (IsPositive(amount))
             Ammo = Mathf.Clamp(Ammo - amount, 0, _MaxAmmo);
+            Debug.Log(Ammo);
         CheckAmmoUI();
     }
 
