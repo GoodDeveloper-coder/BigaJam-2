@@ -25,12 +25,12 @@ public class Dialog_MainMenu : Dialog_Base
 
     public void OnPlayParkourClicked()
     {
-        SceneManager.LoadScene("PlayParkourMode");
+        SceneManager.LoadScene("ParkourLevel_01");
     }
 
     public void OnPlayShootingClicked()
     {
-        SceneManager.LoadScene("PlayShootingMode");
+        SceneManager.LoadScene("ShootingLevel_01");
     }
 
     public void OnSettingsClicked()

@@ -153,6 +153,7 @@ MonoBehaviour:
   _speed: 2900
   _lifeTime: 3
   _powerWhenTouchWithPlayer: 0
+  _knockBackMultiplier: 0.5
 --- !u!96 &2119808950908012010
 TrailRenderer:
   serializedVersion: 2
