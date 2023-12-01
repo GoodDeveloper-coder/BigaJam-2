@@ -130,6 +130,7 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage()
     {
         StartCoroutine(TakeDamageTimer());
+        GetComponent<PlayerStats>().RemoveHP(10f);
     }
 
     IEnumerator TakeDamageTimer()
@@ -142,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Repulsion(float power)
     {
-        if (faceRight) _rb.AddForce(transform.right * power, ForceMode2D.Impulse); 
-        if (!faceRight) _rb.AddForce(-transform.right * power, ForceMode2D.Impulse);
+        //if (faceRight) _rb.AddForce(transform.right * power, ForceMode2D.Impulse); 
+        //if (!faceRight) _rb.AddForce(-transform.right * power, ForceMode2D.Impulse);
     }
 }
