@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rb;
     private PlayerStats _PlayerStats;
 
+    private Activatable_CheckPoint _LastCheckpoint;
+
 
     private void Awake()
     {
@@ -165,5 +167,10 @@ public class PlayerMovement : MonoBehaviour
     {
         //if (faceRight) _rb.AddForce(transform.right * power, ForceMode2D.Impulse); 
         //if (!faceRight) _rb.AddForce(-transform.right * power, ForceMode2D.Impulse);
+    }
+
+    public void SetCheckPoint(Activatable_CheckPoint checkPoint)
+    {
+        _LastCheckpoint = checkPoint;
     }
 }

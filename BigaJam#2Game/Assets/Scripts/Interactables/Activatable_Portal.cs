@@ -60,7 +60,6 @@ public class Activatable_Portal : Activatable_Base
             return;
 
 
-        Debug.Log("1");
         // If the object that collided with our trigger is one that teleported here from another portal, then ignore it.
         // That way you don't instantly teleport again upon teleporting to a new portal.
         if (_CurrentArrivingObjects.Contains(collision.gameObject))
