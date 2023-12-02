@@ -28,6 +28,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private TMP_Text _ammoText;
     [SerializeField] private Image _hpImage;
     [SerializeField] private Image _energyImage;
+    [SerializeField] private GameObject _winSecondPlayerMenu;
 
 
     private PlayerMovement _PlayerMovement;
@@ -41,16 +42,14 @@ public class PlayerStats : MonoBehaviour
     public int Ammo { get; private set; }
 
 
-    private void Awake()
+    #endregion
+    #region MonoBehaviour Methods
+
+
+    void Start()
     {
         _PlayerMovement = GetComponent<PlayerMovement>();
         _GunScript = _PlayerMovement.Gun;
-    }
-
-    #endregion
-    #region MonoBehaviour Methods
-    void Start()
-    {
 
         AddAmmo(_StartingAmmo);
         AddHP(_MaxHP);
@@ -171,6 +170,7 @@ public class PlayerStats : MonoBehaviour
         if (IsPositive(amount))
             HP = Mathf.Clamp(HP - amount, 0, _MaxHP);
         CheckHPUI();
+        CheckWinOrLoose();
     }
 
     public void IncreaseMaxHpBy(float amount)
@@ -196,7 +196,14 @@ public class PlayerStats : MonoBehaviour
         return amount >= 0;
     }
 
-
+    private void CheckWinOrLoose()
+    {
+        if (HP <= 0)
+        {
+            _winSecondPlayerMenu.SetActive(true);
+            GetComponent<Animator>().SetBool("Die", true);
+        }
+    }
 
     public bool HasInfiniteAmmo { get { return _HasInfiniteAmmo; } }
 
