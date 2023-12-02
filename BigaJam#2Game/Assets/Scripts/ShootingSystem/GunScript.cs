@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -75,6 +76,7 @@ public class GunScript : MonoBehaviour
 
         _sp.sprite = CurrentGun.gunSprite;
         _playerStats.CheckAmmoUI();
+        _anim.runtimeAnimatorController = CurrentGun.animator;
     }
     //--------------Function for gun following player--------------\\ 
     void LookAtTarget()
@@ -117,7 +119,7 @@ public class GunScript : MonoBehaviour
             _pool.GetFreeElement(_bulletSpawnPos.position, _bulletSpawnPos.rotation);
             _canShoot = false;
             StartCoroutine(ShootCooldown());
-            //_anim.SetTrigger("Shoot");
+            _anim.SetTrigger("Shoot");
 
             _playerStats.CheckAmmoUI();
         }
