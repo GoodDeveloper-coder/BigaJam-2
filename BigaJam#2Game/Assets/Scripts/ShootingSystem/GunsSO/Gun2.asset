@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753a2c636bc0f494585735d2fd00a737, type: 3}
   m_Name: Gun2
   m_EditorClassIdentifier: 
-  gunSprite: {fileID: -1065246669, guid: 156e1a0bf7d004445920a5bf0c5271da, type: 3}
+  gunSprite: {fileID: -1839770981, guid: af3a5d64fd531da46b83b29d7ba6dcc7, type: 3}
   MaxGunAmmo: 30
   Cooldown: 0.8
-  animator: {fileID: 9100000, guid: 91a97273e73ef1e498b2507080fd595d, type: 2}
-  Ammo: 13
+  animator: {fileID: 9100000, guid: bfd17ebfc3f51d047820649f1f21302d, type: 2}
+  Ammo: 2
