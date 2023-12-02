@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01831d79c92cda49923598c5f22ad9a, type: 3}
+  m_Name: StoryCutScene
+  m_EditorClassIdentifier: 
+  CutsceneFadeInTime: 1
+  CutsceneFadeOutTime: 1
+  CanSkipCutScene: 1
+  SkipCutSceneInputAction: {fileID: 3828406007145930894, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
+  BackgroundMusicVolume: 1
+  BackgroundMusic: []
+  DefaultPageFadeInDuration: 1
+  DefaultPageFadeOutDuration: 1
+  DefaultPageDisplayTime: 30
+  DefaultDisplaySettings: {fileID: 11400000, guid: fa6bc8cc37df7314e8289b50768acf9e, type: 2}
+  Pages:
+  - DisplaySettings: {fileID: 0}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: 'Two heroes, representatives of different worlds - white and black - stood
+      at the farewell to the light in the evening.
+
+
+      At the same time, as it
+      turned out, the worlds themselves both disappeared.
+
+
+      Once you have been
+      absorbed by your effort, you will live in a new being. White and black, stood
+      not far from each other...'
+  - DisplaySettings: {fileID: 0}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: 'On the rays of light and shadow stood two heroes, representatives of different
+      worlds - white and black.
+
+
+      Their calling was to revive their own worlds
+      that once existed as two independent realms.
+
+
+      However, now they found
+      themselves forced to work together to survive in this new reality.'
+  - DisplaySettings: {fileID: 0}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: 'White and black, representatives of yin and yang, stood not far from one
+      another, watching their worlds merge into one. From the beginning, it was difficult
+      to endure.
+
+
+      The collision of two opposites created chaos, confusion,
+      and misunderstanding.
+
+      
+
+      However, with each new day, they learned
+      to accept their new reality. '
+  - DisplaySettings: {fileID: 0}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: 'White represented light, hope and peace, while black represented darkness,
+      mystery and power.
+
+
+      Their task was not only to revive their worlds,
+      but also to maintain the balance between light and darkness in the new united
+      world. '
+  - DisplaySettings: {fileID: 0}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: 'Meetings of white and black took place in different parts of the world.
+
+
+      Every
+      time they crossed paths, they felt the magic that emanated from their union.
+
+
+      However,
+      along with joy and strength came secrets that threatened this new world.'
+  - DisplaySettings: {fileID: 0}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: 'Unbeknownst to either of them, the history of their worlds was also connected
+      with the achievement of unity.
+
+
+      Memories of the past and ancient lore
+      told that only one world could survive in this new shared existence.
+
+
+      This
+      became the cause of a mysterious conflict that gradually grew between white
+      and black.'
+  - DisplaySettings: {fileID: 0}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: 'Their stories intertwine, and although they overcome trials together,
+      it turns out that each of them is hiding secrets from the other.
+
+
+      White
+      gladly carried the call of light, but in his heart was hidden the fear of darkness.
+
+
+      Black,
+      on the other hand, hid his weakness to the light.  '
+  - DisplaySettings: {fileID: 0}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: 'The rapprochement of white and black revealed not only the secrets of
+      their worlds, but also the true essence of their souls.
+
+
+      And when they
+      finally realized that they were truly enemies, they found themselves on the
+      verge of a devastating conflict.'
+  - DisplaySettings: {fileID: 0}
+    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Text: 'Thus began a battle for the survival of light and darkness, in which white
+      and black must determine whose world will remain and whose will disappear forever.
+
+      
+
+      Can
+      their union survive in the face of internal confrontation, or will one world
+      emerge victorious as the other sinks into oblivion? '

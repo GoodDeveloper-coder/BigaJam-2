@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dfc042cfe664754cabf6a21eea29032, type: 3}
-  m_Name: DefaultPageDisplaySettings 1
+  m_Name: DefaultPageDisplaySettings
   m_EditorClassIdentifier: 
   Page:
     FadeInDuration: -1
     FadeOutDuration: -1
-    DisplayTime: 0
+    DisplayTime: -1
   Image:
     TintColor:
       serializedVersion: 2
