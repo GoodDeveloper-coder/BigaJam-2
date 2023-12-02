@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] float _speed;
     [SerializeField] float _lifeTime;
     [SerializeField] float _powerWhenTouchWithPlayer;
+    [SerializeField] private GameObject _bulletHitParticle;
     [Tooltip("This multiplier affects how strongly the bullet knocks back a player.")]
     [SerializeField] float _knockBackForce = 1f;
 
@@ -46,6 +47,7 @@ public class Bullet : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(_knockBackForce * Time.deltaTime, 0f), ForceMode2D.Impulse);
             pm.TakeDamage();
         }
+        Instantiate(_bulletHitParticle, this.gameObject.transform.position, Quaternion.identity);
         _poolObject.ReturnPool();
     }
 }

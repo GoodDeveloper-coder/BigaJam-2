@@ -151,5 +151,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 2000
   _lifeTime: 3
-  _powerWhenTouchWithPlayer: 10000
-  _knockBackMultiplier: 0.5
+  _powerWhenTouchWithPlayer: 1000
+  _bulletHitParticle: {fileID: 897613125598634042, guid: 2b7e0d702a17a2741b2e545f8d111d96, type: 3}
+  _knockBackForce: 1

@@ -153,7 +153,8 @@ MonoBehaviour:
   _speed: 2900
   _lifeTime: 3
   _powerWhenTouchWithPlayer: 0
-  _knockBackMultiplier: 0.5
+  _bulletHitParticle: {fileID: 897613125598634042, guid: 2b7e0d702a17a2741b2e545f8d111d96, type: 3}
+  _knockBackForce: 1
 --- !u!96 &2119808950908012010
 TrailRenderer:
   serializedVersion: 2
