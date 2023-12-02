@@ -12,6 +12,8 @@ public class PlayerStats : MonoBehaviour
     [Min(0)]
     [SerializeField] int _MaxAmmo = 100;
     [Min(0)]
+    [SerializeField] int _StartingAmmo = 30;
+    [Min(0)]
     [SerializeField] float _MaxEnergy = 100f;
     [Min(0)]
     [SerializeField] float _MaxHP = 100f;
@@ -27,6 +29,10 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private Image _hpImage;
     [SerializeField] private Image _energyImage;
 
+
+    private PlayerMovement _PlayerMovement;
+    private GunScript _GunScript;
+
     #endregion
     #region Properties
 
@@ -34,11 +40,19 @@ public class PlayerStats : MonoBehaviour
     public float Energy { get; private set; }
     public int Ammo { get; private set; }
 
+
+    private void Awake()
+    {
+        _PlayerMovement = GetComponent<PlayerMovement>();
+        _GunScript = _PlayerMovement.Gun;
+    }
+
     #endregion
     #region MonoBehaviour Methods
     void Start()
     {
-        AddAmmo(_MaxAmmo);
+
+        AddAmmo(_StartingAmmo);
         AddHP(_MaxHP);
         AddEnergy(_MaxEnergy);
 
@@ -60,7 +74,8 @@ public class PlayerStats : MonoBehaviour
 
     void CheckHPUI() { _hpImage.fillAmount = (float)HP / _MaxHP; }
     void CheckEnergyUI() { _energyImage.fillAmount = (float)Energy / _MaxEnergy; }
-    void CheckAmmoUI() { _ammoText.text = $"{Ammo}/30"; }
+    public void CheckAmmoUI() { _ammoText.text = $"{_GunScript.CurrentGun.Ammo}/{Ammo}"; }
+
 
     void RegenHealth()
     {
@@ -81,8 +96,8 @@ public class PlayerStats : MonoBehaviour
         if (IsPositive(amount))
         {
             Ammo = Mathf.Clamp(Ammo + amount, 0, _MaxAmmo);
-            //Debug.Log(Ammo);
         }
+
         CheckAmmoUI();
     }
 
@@ -90,7 +105,29 @@ public class PlayerStats : MonoBehaviour
     {
         if (IsPositive(amount))
             Ammo = Mathf.Clamp(Ammo - amount, 0, _MaxAmmo);
-            //Debug.Log(Ammo);
+
+        CheckAmmoUI();
+    }
+
+    public void ReloadGun()
+    {
+        GunSO gunSO = _GunScript.CurrentGun;
+
+        if (gunSO.Ammo >= gunSO.MaxGunAmmo)
+            return;
+
+
+        int amountToReload = gunSO.MaxGunAmmo - gunSO.Ammo;
+
+        if (amountToReload >= Ammo)
+            amountToReload = Ammo;
+
+       
+        if (!_HasInfiniteAmmo)
+            Ammo -= amountToReload;
+
+        gunSO.Ammo += amountToReload;
+
         CheckAmmoUI();
     }
 

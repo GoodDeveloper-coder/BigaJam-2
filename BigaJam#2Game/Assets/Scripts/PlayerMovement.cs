@@ -27,20 +27,23 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D _rb;
     private PlayerStats _PlayerStats;
+    private GunScript _Gun;
 
     private Activatable_CheckPoint _LastCheckpoint;
 
 
     private void Awake()
     {
+        _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
+        _PlayerStats = GetComponent<PlayerStats>();
+        _Gun = GetComponentInChildren<GunScript>();
+
         _jumpInput.action.performed += Jump;
     }
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
-        _anim = GetComponent<Animator>();
-        _PlayerStats = GetComponent<PlayerStats>();
-        //_gunScript.SetPlayer(PlayerIndex);
+        //_Gun.SetPlayer(PlayerIndex);
     }
     private void OnDestroy()
     {
@@ -181,5 +184,6 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    public PlayerStats PlayerStats {get { return _PlayerStats; } }
+    public PlayerStats PlayerStats { get { return _PlayerStats; } }
+    public GunScript Gun { get { return _Gun; } }
 }

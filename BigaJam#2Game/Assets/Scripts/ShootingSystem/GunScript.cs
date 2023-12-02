@@ -17,30 +17,28 @@ public class GunScript : MonoBehaviour
     [SerializeField] private List<GunSO> _gunsList;
     public bool inZone = false;
 
-    private int _gunAmmo;
-    private int _gunMaxAmmo;
     private bool _canReload = true;
     private bool _canShoot = true;
     private int _gunIndex;
-    private float _shootCooldown;
 
     private GameObject target;
     private Pool _pool;
     private Animator _anim;
     private SpriteRenderer _sp;
 
+
+
     void Start()
     {
         _pool = GetComponent<Pool>();
         _anim = GetComponent<Animator>();
-        _playerStats.AddAmmo(_gunMaxAmmo);
         _sp = GetComponent<SpriteRenderer>();
-        _gunAmmo = _gunMaxAmmo;
         
         _gunIndex = 0;
-        _sp.sprite = _gunsList[0].gunSprite;
-        _gunMaxAmmo = _gunsList[0].MaxGunAmmo;
-        _shootCooldown = _gunsList[0].Cooldown;
+        _sp.sprite = _gunsList[_gunIndex].gunSprite;
+        
+
+        CurrentGun.Ammo = CurrentGun.MaxGunAmmo;
     }
 
     void Update()
@@ -65,7 +63,7 @@ public class GunScript : MonoBehaviour
     }
 
     public void ChangeGun(InputAction.CallbackContext ctx)
-    {
+    {                
         if (_gunIndex < _gunsList.Count - 1)
         {
             _gunIndex++;
@@ -74,10 +72,9 @@ public class GunScript : MonoBehaviour
         {
             _gunIndex = 0;
         }
-        GunSO newGun = _gunsList[_gunIndex];
-        _sp.sprite = newGun.gunSprite;
-        _gunMaxAmmo = newGun.MaxGunAmmo;
-        _shootCooldown = newGun.Cooldown;
+
+        _sp.sprite = CurrentGun.gunSprite;
+        _playerStats.CheckAmmoUI();
     }
     //--------------Function for gun following player--------------\\ 
     void LookAtTarget()
@@ -114,19 +111,21 @@ public class GunScript : MonoBehaviour
     //--------------Function for shooting--------------\\
     void Shoot(InputAction.CallbackContext ctx)
     {
-        if (_playerStats.Ammo > 0 && _canShoot)
+        if (CurrentGun.Ammo > 0 && _canShoot)
         {
-            _gunAmmo--;
+            CurrentGun.Ammo--;
             _pool.GetFreeElement(_bulletSpawnPos.position, _bulletSpawnPos.rotation);
             _canShoot = false;
             StartCoroutine(ShootCooldown());
             //_anim.SetTrigger("Shoot");
+
+            _playerStats.CheckAmmoUI();
         }
     }
 
     private IEnumerator ShootCooldown()
     {
-        yield return new WaitForSeconds(_shootCooldown);
+        yield return new WaitForSeconds(CurrentGun.Cooldown);
         _canShoot = true;
     }
 
@@ -134,18 +133,7 @@ public class GunScript : MonoBehaviour
     {
         if (_canReload)
         {
-            if (_playerStats.HasInfiniteAmmo || _playerStats.Ammo >= _gunMaxAmmo)
-            {
-                _gunAmmo = _gunMaxAmmo;
-                _playerStats.RemoveAmmo(_gunMaxAmmo);
-            }
-            else if (_playerStats.Ammo > 0)
-            {
-                _gunAmmo = _playerStats.Ammo;
-                _playerStats.RemoveAmmo(_playerStats.Ammo);
-            }
-
-            _playerStats.AddAmmo(_gunMaxAmmo);
+            _playerStats.ReloadGun();
             _canReload = false;
             Invoke("UnlockReload", 5.0f);
         }
@@ -156,4 +144,11 @@ public class GunScript : MonoBehaviour
         _canReload = true;
     }
 
+
+
+    public GunSO CurrentGun
+    {
+        get { return _gunsList[_gunIndex]; }
+    }
+    
 }
