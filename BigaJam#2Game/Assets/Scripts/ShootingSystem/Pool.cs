@@ -75,7 +75,9 @@ public class Pool : MonoBehaviour
     public PoolObject GetFreeElement(Vector3 position)
     {
         var element = GetFreeElement();
+        var tr = TryGetTrailRenderer(element.gameObject);
         element.transform.position = position;
+        tr.Clear();
         return element;
     }
 
@@ -104,5 +106,15 @@ public class Pool : MonoBehaviour
         }
 
         throw new Exception("Pool is over!");
+    }
+
+    TrailRenderer TryGetTrailRenderer(GameObject go)
+    {
+        var tr = go.GetComponent<TrailRenderer>();
+        if (tr != null)
+        {
+            return tr;
+        }
+        return null;
     }
 }
