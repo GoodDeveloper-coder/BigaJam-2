@@ -8,4 +8,7 @@ public class GunSO : ScriptableObject
     public Sprite gunSprite;
     public int MaxGunAmmo;
     public float Cooldown;
+
+    [HideInInspector]
+    public int Ammo = 0;
 }

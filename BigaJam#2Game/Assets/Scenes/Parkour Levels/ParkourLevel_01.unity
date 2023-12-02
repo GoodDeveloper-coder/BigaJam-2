@@ -4981,7 +4981,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 834346389, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
       propertyPath: _MaxAmmo
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 834346389, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
       propertyPath: _hpImage
@@ -5007,6 +5007,26 @@ PrefabInstance:
       propertyPath: _playerStats
       value: 
       objectReference: {fileID: 312407201}
+    - target: {fileID: 6376808397691352785, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _changeWeaponKey
+      value: 
+      objectReference: {fileID: -3861107572191041139, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
+    - target: {fileID: 6376808397691352785, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _gunsList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376808397691352785, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _gunsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a8bbd60a56b3cbf4cb46ca3390801366, type: 2}
+    - target: {fileID: 6376808397691352785, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _gunsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 86093578373f96740a6454aa10c3dd72, type: 2}
+    - target: {fileID: 6376808397691352785, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _gunsList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69df5ae3096488d499b2d5cc47e73aca, type: 2}
     - target: {fileID: 6376808397691352787, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
       propertyPath: _container
       value: 
@@ -5074,7 +5094,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 642480152, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
       propertyPath: _MaxAmmo
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 642480152, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
       propertyPath: _hpImage
@@ -5160,5 +5180,29 @@ PrefabInstance:
       propertyPath: _playerStats
       value: 
       objectReference: {fileID: 1760783818}
+    - target: {fileID: 6799531784574167811, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _changeWeaponKey
+      value: 
+      objectReference: {fileID: -7074723294387888100, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
+    - target: {fileID: 6799531784574167811, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _gunsList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799531784574167811, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _gunsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a8bbd60a56b3cbf4cb46ca3390801366, type: 2}
+    - target: {fileID: 6799531784574167811, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _gunsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 86093578373f96740a6454aa10c3dd72, type: 2}
+    - target: {fileID: 6799531784574167811, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _gunsList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69df5ae3096488d499b2d5cc47e73aca, type: 2}
+    - target: {fileID: 6799531784574167811, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _gunsList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69df5ae3096488d499b2d5cc47e73aca, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
