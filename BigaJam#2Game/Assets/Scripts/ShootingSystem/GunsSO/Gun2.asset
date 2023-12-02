@@ -15,4 +15,5 @@ MonoBehaviour:
   gunSprite: {fileID: -1065246669, guid: 156e1a0bf7d004445920a5bf0c5271da, type: 3}
   MaxGunAmmo: 30
   Cooldown: 0.8
-  Ammo: 25
+  animator: {fileID: 9100000, guid: 91a97273e73ef1e498b2507080fd595d, type: 2}
+  Ammo: 13
