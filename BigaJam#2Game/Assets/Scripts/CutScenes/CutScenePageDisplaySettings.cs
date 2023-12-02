@@ -86,7 +86,7 @@ public class CutScenePageDisplaySettings : ScriptableObject
         public float FadeOutDuration;
 
         [Tooltip("How long this page will be displayed for (in seconds) before it starts to fade out. Leave this set to 0 to have it use the default value in the parent CutSceneContent scriptable object.")]
-        [Min(0f)]
+        [Min(-1f)]
         public float DisplayTime;
     }
 
