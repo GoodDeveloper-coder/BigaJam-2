@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,8 +26,6 @@ public class GunScript : MonoBehaviour
     private Animator _anim;
     private SpriteRenderer _sp;
 
-
-
     void Start()
     {
         _pool = GetComponent<Pool>();
@@ -37,8 +34,6 @@ public class GunScript : MonoBehaviour
         
         _gunIndex = 0;
         _sp.sprite = _gunsList[_gunIndex].gunSprite;
-        
-
         CurrentGun.Ammo = CurrentGun.MaxGunAmmo;
     }
 
@@ -120,7 +115,6 @@ public class GunScript : MonoBehaviour
             _canShoot = false;
             StartCoroutine(ShootCooldown());
             _anim.SetTrigger("Shoot");
-
             _playerStats.CheckAmmoUI();
         }
     }
@@ -145,8 +139,6 @@ public class GunScript : MonoBehaviour
     {
         _canReload = true;
     }
-
-
 
     public GunSO CurrentGun
     {

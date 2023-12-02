@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (_MoveVector.x != 0f && !_dashInput.action.IsPressed())
             Walk();
-        else if (_dashInput.action.IsPressed())
+        else if (_MoveVector.x != 0f && _dashInput.action.IsPressed())
             Dash();
         else
             Stop();
