@@ -82,7 +82,7 @@ public class GunScript : MonoBehaviour
     {
         Vector3 look = transform.InverseTransformPoint(target.transform.position);
         float Angle = Mathf.Atan2(look.y, look.x) * Mathf.Rad2Deg;
-        //Angle = Mathf.Clamp(Angle, -20, 1);
+        Angle = Mathf.Clamp(Angle, -20, 1);
 
         _rotateGun.Rotate(0, 0, Angle);
     }
