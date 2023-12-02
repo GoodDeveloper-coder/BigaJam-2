@@ -51,7 +51,7 @@ public class GunScript : MonoBehaviour
         _reloadKey.action.performed += Reload;
         _changeWeaponKey.action.performed += ChangeGun;
     }
-
+    
     private void OnDestroy()
     {
         _shootKey.action.performed -= Shoot;
@@ -72,6 +72,10 @@ public class GunScript : MonoBehaviour
         _sp.sprite = CurrentGun.gunSprite;
         _playerStats.CheckAmmoUI();
         _anim.runtimeAnimatorController = CurrentGun.animator;
+    }
+    public void AddGun(GunSO gun)
+    {
+        _gunsList.Add(gun);
     }
     //--------------Function for gun following player--------------\\ 
     void LookAtTarget()
