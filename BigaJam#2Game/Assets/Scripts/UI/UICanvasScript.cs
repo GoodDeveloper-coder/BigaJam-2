@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class UICanvasScript : MonoBehaviour
 {
+    [SerializeField] private AudioSource _clickButtonSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,15 @@ public class UICanvasScript : MonoBehaviour
 
     public void PlayAgain()
     {
+        Time.timeScale = 1f;
+        _clickButtonSound.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoToMenu()
     {
+        Time.timeScale = 1f;
+        _clickButtonSound.Play();
         SceneManager.LoadScene("MainMenuScene");
     }
 }
