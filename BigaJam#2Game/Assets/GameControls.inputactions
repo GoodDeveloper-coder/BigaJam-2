@@ -60,7 +60,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SkipCutscene",
+                    "name": "Pause/SkipCutscene",
                     "type": "Button",
                     "id": "0157bc0a-d5d4-4ab3-b5e0-8240e81142d2",
                     "expectedControlType": "Button",
@@ -143,7 +143,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SkipCutscene",
+                    "action": "Pause/SkipCutscene",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -230,7 +230,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SkipCutscene",
+                    "name": "Pause/SkipCutscene",
                     "type": "Button",
                     "id": "af59d57b-de62-438a-b5d6-46c4aa0f7cf9",
                     "expectedControlType": "Button",
@@ -313,7 +313,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SkipCutscene",
+                    "action": "Pause/SkipCutscene",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

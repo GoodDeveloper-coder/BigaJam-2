@@ -6,14 +6,15 @@ using UnityEngine;
 
 public abstract class Dialog_Base : MonoBehaviour
 {  
-    public void CloseDialog()
+    public virtual void CloseDialog()
     {
         gameObject.SetActive(false);
     }
 
-    public void OpenDialog()
+    public virtual void OpenDialog()
     {
         gameObject.SetActive(true);
+        Cursor.visible = true;
     }
 
 

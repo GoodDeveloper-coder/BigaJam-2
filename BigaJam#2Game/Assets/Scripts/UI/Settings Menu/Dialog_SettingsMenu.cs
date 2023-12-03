@@ -8,6 +8,7 @@ using UnityEngine;
 public class Dialog_SettingsMenu : Dialog_Base
 {
     [SerializeField] private Dialog_MainMenu _MainMenu;
+    [SerializeField] private Dialog_PauseMenu _PauseMenu;
 
     [Header("Settings Pages")]
     [SerializeField] private Dialog_GameplaySettings _GameplaySettings;
@@ -37,7 +38,14 @@ public class Dialog_SettingsMenu : Dialog_Base
     public void OnReturnToMainMenuClicked()
     {
         this.CloseDialog();
-        _MainMenu.OpenDialog();
+
+
+        if (_MainMenu != null)
+            _MainMenu.OpenDialog();
+        else if (_PauseMenu != null)
+            _PauseMenu.OpenDialog();
+        else
+            Debug.LogError("Can't return to previous menu because it hasn't been set!");
     }
 
 }
