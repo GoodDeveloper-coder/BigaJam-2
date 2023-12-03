@@ -23,7 +23,19 @@ public class UICanvasScript : MonoBehaviour
     {
         Time.timeScale = 1f;
         _clickButtonSound.Play();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        int _randomNumber = Random.Range(1, 4);
+        if (_randomNumber == 1)
+        {
+            SceneManager.LoadScene("ShootingLevel_01 1");
+        }
+        else if (_randomNumber == 2)
+        {
+            SceneManager.LoadScene("ShootingLevel_02");
+        }
+        else if (_randomNumber == 3)
+        {
+            SceneManager.LoadScene("ShootingLevel_03");
+        }
     }
 
     public void GoToMenu()
