@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
     private void Stop()
     {
         // Velocity needs to be less than this value for the walk animation to stop.
-        float animThreshold = 0.2f;
+        float animThreshold = 0.25f;
 
         // Using rb.velocity here makes player still animate during knockback.
         float moveAmount = _rb.velocity.x;
