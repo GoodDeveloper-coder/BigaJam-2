@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public float _decellerationRate = 2f;
     
 
+    [Header("Sounds")]
     private Animator _anim;
 
     public float walkSpeed = 2f;
@@ -205,6 +206,10 @@ public class PlayerMovement : MonoBehaviour
             transform.position = _StartPoint;
     }
 
+    public void PickupPowerupSound()
+    {
+        _pickupPowerupSound.Play();
+    }
 
     public PlayerStats PlayerStats { get { return _PlayerStats; } }
     public GunScript Gun { get { return _Gun; } }

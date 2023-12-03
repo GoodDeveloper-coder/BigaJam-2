@@ -30,9 +30,12 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private bool _isShootingRegime;
     [SerializeField] private bool _isParkourRegime;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioSource _dieSound;
 
     private PlayerMovement _PlayerMovement;
     private GunScript _GunScript;
+
 
     #endregion
     #region Properties
@@ -214,6 +217,7 @@ public class PlayerStats : MonoBehaviour
                 GetComponent<Animator>().SetBool("Die", true);
                 GetComponent<PlayerMovement>().enabled = false;
                 GetComponent<PlayerStats>().enabled = false;
+                _dieSound.Play();
                 Invoke("LockTime", 1f);
             }
             else if (_isParkourRegime)
