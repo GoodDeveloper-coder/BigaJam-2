@@ -15,7 +15,8 @@ MonoBehaviour:
   CutsceneFadeInTime: 1
   CutsceneFadeOutTime: 1
   CanSkipCutScene: 1
-  SkipCutSceneInputAction: {fileID: 3828406007145930894, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
+  Player1_SkipCutSceneInputAction: {fileID: 3828406007145930894, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
+  Player2_SkipCutSceneInputAction: {fileID: 8509726267349070216, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
   BackgroundMusicVolume: 1
   BackgroundMusic: []
   DefaultPageFadeInDuration: 1
@@ -58,10 +59,10 @@ MonoBehaviour:
       The collision of two opposites created chaos, confusion,
       and misunderstanding.
 
-      
 
-      However, with each new day, they learned
-      to accept their new reality. '
+
+      However, with each new day, they learned to
+      accept their new reality. '
   - DisplaySettings: {fileID: 0}
     Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
     Text: 'White represented light, hope and peace, while black represented darkness,
@@ -121,7 +122,7 @@ MonoBehaviour:
     Text: 'Thus began a battle for the survival of light and darkness, in which white
       and black must determine whose world will remain and whose will disappear forever.
 
-      
+
 
       Can
       their union survive in the face of internal confrontation, or will one world

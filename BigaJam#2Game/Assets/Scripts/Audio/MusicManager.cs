@@ -104,7 +104,7 @@ public class MusicManager : MonoBehaviour
         if (_CurrentMusicTrackIndex < 0)
             yield break;
 
-        Debug.Log("starting next track!");
+
         if (_FadeType == MusicFadeTypes.FadeOutThenFadeIn)
             yield return StartCoroutine(FadeOutAndFadeInNextTrack());
         else

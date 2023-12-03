@@ -9,6 +9,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 using UnityEngine.InputSystem.Controls;
+using System.Runtime.CompilerServices;
 
 
 
@@ -235,8 +236,7 @@ public class CutScenePlayer : MonoBehaviour
         {
 
             // Bail out if the player decides to skip the cutscene.
-            if (_CutSceneContent.CanSkipCutScene && 
-                _CutSceneContent.SkipCutSceneInputAction != null && _CutSceneContent.SkipCutSceneInputAction.action.IsPressed())
+            if (_CutSceneContent.CanSkipCutScene && IsSkipCutSceneKeyPressed())
             {
                 IsPlaying = false;
                 yield break;
@@ -252,6 +252,12 @@ public class CutScenePlayer : MonoBehaviour
 
     }
 
+    private bool IsSkipCutSceneKeyPressed()
+    {
+        return _CutSceneContent.Player1_SkipCutSceneInputAction != null && _CutSceneContent.Player1_SkipCutSceneInputAction.action.IsPressed() ||
+               _CutSceneContent.Player2_SkipCutSceneInputAction != null && _CutSceneContent.Player2_SkipCutSceneInputAction.action.IsPressed();
+
+    }
     private IEnumerator Fade(byte startAlpha, byte endAlpha, float fadeDuration, bool isIntroOrOutroFade = false)
     {
         _IsPageFading = true;
@@ -418,8 +424,7 @@ public class CutScenePlayer : MonoBehaviour
 
 
             // Bail out if the player decides to skip the cutscene.
-            if (_CutSceneContent.CanSkipCutScene &&
-                _CutSceneContent.SkipCutSceneInputAction != null && _CutSceneContent.SkipCutSceneInputAction.action.IsPressed())
+            if (_CutSceneContent.CanSkipCutScene && IsSkipCutSceneKeyPressed())
             {
                 IsPlaying = false;
                 yield break;
