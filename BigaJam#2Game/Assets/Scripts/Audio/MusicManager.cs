@@ -22,7 +22,7 @@ using Random = UnityEngine.Random;
 public class MusicManager : MonoBehaviour
 {
     [Header("Music File Search Settings")]
-    [SerializeField] private string _MusicFileExtensions = "*.mp3,*.ogg,*.wav";
+    [SerializeField] private string _MusicFileExtensions = "*.mp3,*.ogg,*.wav,*.m4a";
 
     [Header("Audio Sources")]
     [SerializeField] private AudioSource _AudioSource1;
