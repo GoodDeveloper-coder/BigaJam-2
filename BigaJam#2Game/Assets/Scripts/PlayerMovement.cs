@@ -15,7 +15,10 @@ public class PlayerMovement : MonoBehaviour
     public float _dashEnergyCostMultiplier = 3f;
     [Tooltip("How quickly the player decellerates.")]
     public float _decellerationRate = 2f;
+    [SerializeField]
+    private AudioClip _pickupPowerupSound;
 
+    
     [Header("Sounds")]
     [SerializeField] private AudioSource _pickupPowerupSound;
 
@@ -209,7 +212,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void PickupPowerupSound()
     {
-        _pickupPowerupSound.Play();
+        AudioSource.PlayClipAtPoint(_pickupPowerupSound, transform.position);
     }
 
     public PlayerStats PlayerStats { get { return _PlayerStats; } }
