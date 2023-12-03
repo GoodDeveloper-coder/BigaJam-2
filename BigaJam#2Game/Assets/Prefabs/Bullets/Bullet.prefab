@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2502429112041051865}
   - component: {fileID: 4675494643102051}
   - component: {fileID: -8170356006671481955}
-  - component: {fileID: -5386331445728294052}
   - component: {fileID: -6988238566405567896}
   m_Layer: 0
   m_Name: Bullet
@@ -125,18 +124,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.002771886, y: 0.013251589}
   m_Size: {x: 0.5143658, y: 0.25088137}
   m_Direction: 1
---- !u!114 &-5386331445728294052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2502429112041051864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27a6a3394f74c7f46b2e0113ed839708, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-6988238566405567896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,8 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70c2a6e5024733489be5759b320135e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2000
-  _lifeTime: 3
-  _powerWhenTouchWithPlayer: 1000
-  _bulletHitParticle: {fileID: 897613125598634042, guid: 2b7e0d702a17a2741b2e545f8d111d96, type: 3}
-  _knockBackForce: 1
+  _AmmoType: {fileID: 0}

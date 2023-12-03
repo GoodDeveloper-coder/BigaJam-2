@@ -437,6 +437,7 @@ GameObject:
   - component: {fileID: 293855534}
   - component: {fileID: 293855533}
   - component: {fileID: 293855532}
+  - component: {fileID: 293855535}
   m_Layer: 9
   m_Name: Gun(1)
   m_TagString: Untagged
@@ -491,12 +492,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82257ad82668dd4cb766935dfdf808e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _BulletPrefab: {fileID: -6988238566405567896, guid: d028c633a2391994281aa4471741e84a, type: 3}
   _bulletSpawnPos: {fileID: 558863659}
   _shootKey: {fileID: 7603901110609164879, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
   _reloadKey: {fileID: 6184223098273839873, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
-  _gunMaxAmmo: 30
-  _gunAmmo: 30
-  _gunAmmoText: {fileID: 1534376597}
+  _changeWeaponKey: {fileID: -7074723294387888100, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
+  _rotateGun: {fileID: 0}
+  _playerStats: {fileID: 0}
+  _gunsList: []
   inZone: 0
 --- !u!58 &293855534
 CircleCollider2D:
@@ -514,6 +517,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 6
+--- !u!114 &293855535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293855530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0266376e9a90184fa3faf98677befe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BulletPrefab: {fileID: 6200676627783771692, guid: d028c633a2391994281aa4471741e84a, type: 3}
+  _container: {fileID: 0}
+  _minCapacity: 100
+  _maxCapacity: 200
+  _autoExpand: 0
 --- !u!1001 &327510072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1720,6 +1740,7 @@ GameObject:
   - component: {fileID: 1931483951}
   - component: {fileID: 1931483950}
   - component: {fileID: 1931483949}
+  - component: {fileID: 1931483952}
   m_Layer: 9
   m_Name: Gun(2)
   m_TagString: Untagged
@@ -1790,13 +1811,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82257ad82668dd4cb766935dfdf808e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _BulletPrefab: {fileID: 0}
   _bulletSpawnPos: {fileID: 247098445}
   _shootKey: {fileID: 526034803837253693, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
   _reloadKey: {fileID: -2704869980158190050, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
-  _gunMaxAmmo: 30
-  _gunAmmo: 30
-  _gunAmmoText: {fileID: 1959311179}
+  _changeWeaponKey: {fileID: 0}
+  _rotateGun: {fileID: 0}
+  _playerStats: {fileID: 0}
+  _gunsList: []
   inZone: 0
+--- !u!114 &1931483952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931483947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0266376e9a90184fa3faf98677befe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BulletPrefab: {fileID: 0}
+  _container: {fileID: 0}
+  _minCapacity: 100
+  _maxCapacity: 200
+  _autoExpand: 0
 --- !u!1 &1944517986
 GameObject:
   m_ObjectHideFlags: 0
@@ -6233,6 +6273,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+      propertyPath: _dashInput
+      value: 
+      objectReference: {fileID: -8320172353991480734, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
+    - target: {fileID: 5125545561646569013, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
       propertyPath: _jumpInput
       value: 
       objectReference: {fileID: 1575895743049815937, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
@@ -6242,3 +6286,29 @@ PrefabInstance:
       objectReference: {fileID: -50258908233179224, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+--- !u!1 &3466001776517822178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3466001778157352053, guid: 3cddb12752e42cc458a90c97d9a599e2, type: 3}
+  m_PrefabInstance: {fileID: 3466001776517822177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3466001776517822179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3466001776517822178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1d4cab8f269bc48acd7c74f8fc46cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _HasInfiniteAmmo: 0
+  _MaxEnergy: 100
+  _MaxHP: 100
+  _HpRegenRate: 2
+  _EnergyRegenRate: 2
+  _ammoText: {fileID: 0}
+  _hpImage: {fileID: 0}
+  _energyImage: {fileID: 0}
+  _winSecondPlayerMenu: {fileID: 0}

@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 753a2c636bc0f494585735d2fd00a737, type: 3}
-  m_Name: Gun2
+  m_Name: Gun1
   m_EditorClassIdentifier: 
-  gunSprite: {fileID: -1065246669, guid: 156e1a0bf7d004445920a5bf0c5271da, type: 3}
+  gunSprite: {fileID: 532497246, guid: 05cced4504c7c414c938f9cc9fd1a05f, type: 3}
+  AmmoType: {fileID: 11400000, guid: 78b48be4f8998eb41858fca5aa08b4af, type: 2}
   MaxGunAmmo: 30
-  Cooldown: 0.8
-  animator: {fileID: 9100000, guid: 91a97273e73ef1e498b2507080fd595d, type: 2}
-  Ammo: 13
+  Cooldown: 0.4
+  animator: {fileID: 9100000, guid: bc97b4a7636bdef4ab8ea5caf39dbc57, type: 2}
+  Ammo: 30

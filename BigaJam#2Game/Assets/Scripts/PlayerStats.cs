@@ -10,10 +10,6 @@ public class PlayerStats : MonoBehaviour
     [Header("Max Values")]
     [SerializeField] bool _HasInfiniteAmmo = false;
     [Min(0)]
-    [SerializeField] int _MaxAmmo = 100;
-    [Min(0)]
-    [SerializeField] int _StartingAmmo = 30;
-    [Min(0)]
     [SerializeField] float _MaxEnergy = 100f;
     [Min(0)]
     [SerializeField] float _MaxHP = 100f;
@@ -39,8 +35,7 @@ public class PlayerStats : MonoBehaviour
 
     public float HP { get; private set; }
     public float Energy { get; private set; }
-    public int Ammo { get; private set; }
-
+    public PlayerAmmoStash AmmoStash { get; private set; } = new PlayerAmmoStash();
 
     #endregion
     #region MonoBehaviour Methods
@@ -51,7 +46,6 @@ public class PlayerStats : MonoBehaviour
         _PlayerMovement = GetComponent<PlayerMovement>();
         _GunScript = _PlayerMovement.Gun;
 
-        AddAmmo(_StartingAmmo);
         AddHP(_MaxHP);
         AddEnergy(_MaxEnergy);
 
@@ -62,10 +56,13 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        if (HP < _MaxHP)
-            RegenHealth();
-        if (Energy < _MaxEnergy)
-            RegenEnergy();
+        if (HP > 0)
+        {
+            if (HP < _MaxHP)
+                RegenHealth();
+            if (Energy < _MaxEnergy)
+                RegenEnergy();
+        }
     }
 
     #endregion
@@ -73,7 +70,7 @@ public class PlayerStats : MonoBehaviour
 
     void CheckHPUI() { _hpImage.fillAmount = (float)HP / _MaxHP; }
     void CheckEnergyUI() { _energyImage.fillAmount = (float)Energy / _MaxEnergy; }
-    public void CheckAmmoUI() { _ammoText.text = $"{_GunScript.CurrentGun.Ammo}/{Ammo}"; }
+    public void CheckAmmoUI() { _ammoText.text = $"{_GunScript.CurrentGun.Ammo}/{AmmoStash.GetAmmoCount(_GunScript.CurrentGun.AmmoType)}"; }
 
 
     void RegenHealth()
@@ -90,50 +87,57 @@ public class PlayerStats : MonoBehaviour
         CheckEnergyUI();
     }
 
-    public void AddAmmo(int amount)
+    public void AddAmmo(AmmoSO ammoType, int amount)
     {
         if (IsPositive(amount))
         {
-            Ammo = Mathf.Clamp(Ammo + amount, 0, _MaxAmmo);
+            AmmoStash.AddAmmo(ammoType, amount);
         }
 
         CheckAmmoUI();
     }
 
-    public void RemoveAmmo(int amount)
+    public void RemoveAmmo(AmmoSO ammoType, int amount)
     {
         if (IsPositive(amount))
-            Ammo = Mathf.Clamp(Ammo - amount, 0, _MaxAmmo);
+            AmmoStash.RemoveAmmo(ammoType, amount);
 
         CheckAmmoUI();
     }
 
-    public void ReloadGun()
+    public void ReloadGun(GunScript gunScript)
     {
-        GunSO gunSO = _GunScript.CurrentGun;
+        _GunScript = gunScript;
+        GunSO gunSO = gunScript.CurrentGun;
 
         if (gunSO.Ammo >= gunSO.MaxGunAmmo)
+        {
+            CheckAmmoUI();
             return;
+        }
 
 
+
+        int curAmmoCount = AmmoStash.GetAmmoCount(gunSO.AmmoType);
         int amountToReload = gunSO.MaxGunAmmo - gunSO.Ammo;
 
-        if (amountToReload >= Ammo)
-            amountToReload = Ammo;
+        if (amountToReload >= curAmmoCount)
+            amountToReload = curAmmoCount;
 
-       
-        if (!_HasInfiniteAmmo)
-            Ammo -= amountToReload;
+
+        if (!_HasInfiniteAmmo && !gunSO.AmmoType.HasInfiniteAmmo)
+            AmmoStash.RemoveAmmo(gunSO.AmmoType, amountToReload);
 
         gunSO.Ammo += amountToReload;
 
         CheckAmmoUI();
     }
 
-    public void IncreaseMaxAmmoBy(int amount)
+    public void IncreaseMaxAmmoBy(AmmoSO ammoType, int amount)
     {
         if (IsPositive(amount))
-            Ammo += amount;
+            AmmoStash.IncreaseMaxAmmo(ammoType, amount);
+
         CheckAmmoUI();
     }
 

@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 6376808397691352786}
   - component: {fileID: 6376808397691352785}
   - component: {fileID: 6376808397691352784}
-  - component: {fileID: 6376808397691352787}
   - component: {fileID: 6376808397691352783}
   - component: {fileID: 6376808397691352782}
+  - component: {fileID: 5779776068364248168}
   m_Layer: 9
   m_Name: Gun(2)
   m_TagString: Untagged
@@ -83,13 +83,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82257ad82668dd4cb766935dfdf808e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _BulletPrefab: {fileID: -6988238566405567896, guid: d028c633a2391994281aa4471741e84a, type: 3}
   _bulletSpawnPos: {fileID: 6376808398150992307}
   _shootKey: {fileID: 526034803837253693, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
   _reloadKey: {fileID: -2704869980158190050, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
-  _gunMaxAmmo: 30
-  _gunAmmo: 30
-  _gunAmmoText: {fileID: 0}
+  _changeWeaponKey: {fileID: -3861107572191041139, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
   _rotateGun: {fileID: 6376808397595185844}
+  _playerStats: {fileID: 834346389}
+  _gunsList: []
   inZone: 0
 --- !u!58 &6376808397691352784
 CircleCollider2D:
@@ -107,23 +108,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 6
---- !u!114 &6376808397691352787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6376808397691352789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0efcdadaf5c7e8459947896b09f9f6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: -5386331445728294052, guid: 8ee4ef42ab0ef3840bd033e2211c081b, type: 3}
-  _container: {fileID: 0}
-  _minCapacity: 100
-  _maxCapacity: 200
-  _autoExpand: 0
 --- !u!95 &6376808397691352783
 Animator:
   serializedVersion: 5
@@ -197,6 +181,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5779776068364248168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376808397691352789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0266376e9a90184fa3faf98677befe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BulletPrefab: {fileID: 6200676627783771692, guid: d028c633a2391994281aa4471741e84a, type: 3}
+  _container: {fileID: 0}
+  _minCapacity: 100
+  _maxCapacity: 200
+  _autoExpand: 0
 --- !u!1 &6376808398150992306
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +540,8 @@ MonoBehaviour:
   _moveInput: {fileID: 3237466971853468888, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
   _dashInput: {fileID: 1231339833322790905, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
   _jumpInput: {fileID: 7097674855969335755, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
+  _dashEnergyCostMultiplier: 3
+  _decellerationRate: 2
   walkSpeed: 5
   dashSpeed: 10
   _playerIndex: 0
@@ -582,11 +585,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1d4cab8f269bc48acd7c74f8fc46cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MaxAmmo: 100
+  _HasInfiniteAmmo: 0
   _MaxEnergy: 100
   _MaxHP: 100
+  _HpRegenRate: 2
+  _EnergyRegenRate: 2
+  _ammoText: {fileID: 0}
   _hpImage: {fileID: 0}
   _energyImage: {fileID: 0}
+  _winSecondPlayerMenu: {fileID: 0}
 --- !u!1 &7523068784857686722
 GameObject:
   m_ObjectHideFlags: 0

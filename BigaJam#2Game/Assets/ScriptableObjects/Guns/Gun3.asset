@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Gun3
   m_EditorClassIdentifier: 
   gunSprite: {fileID: 97379867, guid: 05cced4504c7c414c938f9cc9fd1a05f, type: 3}
+  AmmoType: {fileID: 11400000, guid: 4290e924244c0d040aeccadc2e933774, type: 2}
   MaxGunAmmo: 30
   Cooldown: 0.05
   animator: {fileID: 9100000, guid: bc97b4a7636bdef4ab8ea5caf39dbc57, type: 2}
