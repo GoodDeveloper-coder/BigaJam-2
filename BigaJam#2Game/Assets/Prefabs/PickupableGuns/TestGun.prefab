@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6268141935289194073}
   - component: {fileID: 6268141935289194072}
   - component: {fileID: 6268141935289194075}
+  - component: {fileID: 638528870324750511}
   m_Layer: 0
   m_Name: TestGun
   m_TagString: Untagged
@@ -126,3 +127,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gun: {fileID: 11400000, guid: a8bbd60a56b3cbf4cb46ca3390801366, type: 2}
   _lifetime: 1
+--- !u!95 &638528870324750511
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6268141935289194074}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2bfdf24f5cae7541bf9ad45a847d32a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
