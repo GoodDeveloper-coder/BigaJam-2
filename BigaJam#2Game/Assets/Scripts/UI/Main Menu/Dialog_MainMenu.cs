@@ -30,7 +30,7 @@ public class Dialog_MainMenu : Dialog_Base
 
     public void OnPlayShootingClicked()
     {
-        SceneManager.LoadScene("ShootingLevel_01");
+        SceneManager.LoadScene("ShootingLevel_01 1");
     }
 
     public void OnSettingsClicked()
