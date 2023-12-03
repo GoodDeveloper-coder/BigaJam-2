@@ -9,12 +9,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference _moveInput;
     [SerializeField] private InputActionReference _dashInput;
     [SerializeField] private InputActionReference _jumpInput;
+    [SerializeField] private InputActionReference _pauseInput;
     [Space]
     [Tooltip("This multiplier effects how fast the player's dash uses energy.")]
     public float _dashEnergyCostMultiplier = 3f;
     [Tooltip("How quickly the player decellerates.")]
     public float _decellerationRate = 2f;
-
+    
 
     private Animator _anim;
 
@@ -32,10 +33,17 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _StartPoint;
     private Activatable_CheckPoint _LastCheckpoint;
 
+    private Dialog_PauseMenu _PauseMenu;
+
 
     void Awake()
     {
         _StartPoint = transform.position;
+
+        _PauseMenu = GameObject.FindObjectOfType<Dialog_PauseMenu>(true);
+        if (_PauseMenu == null)
+            Debug.LogError("There is no pause menu added in this scene!");
+
 
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
@@ -43,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         _Gun = GetComponentInChildren<GunScript>(true);
 
         _jumpInput.action.performed += Jump;
+        _pauseInput.action.performed += Pause;
     }
     void Start()
     {
@@ -51,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnDestroy()
     {
         _jumpInput.action.performed -= Jump;
+        _pauseInput.action.performed -= Pause;
     }
     void Update()
     {
@@ -123,6 +133,15 @@ public class PlayerMovement : MonoBehaviour
 
             faceRight = !faceRight;
         }
+    }
+
+    void Pause(InputAction.CallbackContext ctx)
+    {
+        // If menu is already open, then do nothing.
+        if (_PauseMenu.gameObject.activeSelf)
+            return;
+
+        _PauseMenu.OpenDialog();
     }
 
     //------- Function for jump ---------
