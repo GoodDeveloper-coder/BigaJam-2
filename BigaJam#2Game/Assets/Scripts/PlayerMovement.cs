@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("How quickly the player decellerates.")]
     public float _decellerationRate = 2f;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioSource _pickupPowerupSound;
 
     private Animator _anim;
 
@@ -186,6 +188,10 @@ public class PlayerMovement : MonoBehaviour
             transform.position = _StartPoint;
     }
 
+    public void PickupPowerupSound()
+    {
+        _pickupPowerupSound.Play();
+    }
 
     public PlayerStats PlayerStats { get { return _PlayerStats; } }
     public GunScript Gun { get { return _Gun; } }

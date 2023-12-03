@@ -18,6 +18,8 @@ public class Powerup_Ammo : PowerUp_Base
 
         EnableComponents(false);
 
+        playerScript.PickupPowerupSound();
+
         playerScript.PlayerStats.AddAmmo(_AmmoType, _addAmmo);
 
         yield return null;

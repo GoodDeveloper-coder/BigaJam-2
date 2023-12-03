@@ -12,6 +12,9 @@ public class Powerup_Jump : PowerUp_Base
         EnableComponents(false);
 
         playerScript.jumpForce += _addJumpForce;
+
+        playerScript.PickupPowerupSound();
+
         yield return new WaitForSeconds(_Duration);
         playerScript.jumpForce -= _addJumpForce;
     }

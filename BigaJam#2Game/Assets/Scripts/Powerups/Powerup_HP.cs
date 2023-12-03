@@ -11,6 +11,8 @@ public class Powerup_HP : PowerUp_Base
     {
         EnableComponents(false);
 
+        playerScript.PickupPowerupSound();
+
         playerScript.PlayerStats.AddHP(_addHealth);
 
         yield return null;

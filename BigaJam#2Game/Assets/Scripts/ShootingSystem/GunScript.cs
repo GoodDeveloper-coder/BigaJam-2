@@ -16,6 +16,12 @@ public class GunScript : MonoBehaviour
     [SerializeField] private Transform _rotateGun;
     [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private List<GunSO> _gunsList;
+
+    [Header("Sounds")]
+    [SerializeField] private AudioSource _shootSound;
+    [SerializeField] private AudioSource _reloadSound;
+    [SerializeField] private AudioSource _changeSound;
+
     public bool inZone = false;
 
     private bool _canReload = true;
@@ -47,7 +53,7 @@ public class GunScript : MonoBehaviour
     void Start()
     {
         
-   }
+    }
 
     void Update()
     {
@@ -80,10 +86,12 @@ public class GunScript : MonoBehaviour
         if (_gunIndex < _gunsList.Count - 1)
         {
             _gunIndex++;
+            _changeSound.Play();
         }
         else
         {
             _gunIndex = 0;
+            _changeSound.Play();
         }
 
         _sp.sprite = CurrentGun.gunSprite;
@@ -136,6 +144,7 @@ public class GunScript : MonoBehaviour
             _BulletPools.GetPool(CurrentGun.AmmoType).GetFreeElement(_bulletSpawnPos.position, _bulletSpawnPos.rotation);
             _canShoot = false;
             StartCoroutine(ShootCooldown());
+            _shootSound.Play();
             _anim.SetTrigger("Shoot");
             _playerStats.CheckAmmoUI();
         }
@@ -144,13 +153,14 @@ public class GunScript : MonoBehaviour
     private IEnumerator ShootCooldown()
     {
         yield return new WaitForSeconds(CurrentGun.Cooldown);
-        _canShoot = true;
+        _canShoot = true; 
     }
 
     void Reload(InputAction.CallbackContext ctx)
     {
         if (_canReload)
         {
+            _reloadSound.Play();
             _playerStats.ReloadGun(this);
             _canReload = false;
             Invoke("UnlockReload", 5.0f);

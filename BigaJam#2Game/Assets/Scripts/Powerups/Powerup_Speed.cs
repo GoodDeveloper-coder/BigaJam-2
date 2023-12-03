@@ -15,7 +15,11 @@ public class Powerup_Speed : PowerUp_Base
     
         playerScript.walkSpeed += _addSpeed;
         playerScript.dashSpeed += _addSpeed;
-        
+
+        playerScript.PickupPowerupSound();
+
+        playerScript.PickupPowerupSound();
+
         yield return new WaitForSeconds(_Duration);
 
         playerScript.walkSpeed -= _addSpeed;
