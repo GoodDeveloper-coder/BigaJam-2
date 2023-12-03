@@ -431,7 +431,7 @@ Transform:
   m_GameObject: {fileID: 7523068783744187030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.2588, y: 0.7496, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7523068784857686723}
@@ -597,6 +597,8 @@ MonoBehaviour:
   _hpImage: {fileID: 0}
   _energyImage: {fileID: 0}
   _winSecondPlayerMenu: {fileID: 0}
+  _isShootingRegime: 0
+  _isParkourRegime: 0
 --- !u!1 &7523068784857686722
 GameObject:
   m_ObjectHideFlags: 0

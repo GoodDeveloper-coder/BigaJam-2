@@ -26,6 +26,10 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private Image _energyImage;
     [SerializeField] private GameObject _winSecondPlayerMenu;
 
+    [Header("Choose regime parkour or shooting")]
+    [SerializeField] private bool _isShootingRegime;
+    [SerializeField] private bool _isParkourRegime;
+
 
     private PlayerMovement _PlayerMovement;
     private GunScript _GunScript;
@@ -204,9 +208,25 @@ public class PlayerStats : MonoBehaviour
     {
         if (HP <= 0)
         {
-            _winSecondPlayerMenu.SetActive(true);
-            GetComponent<Animator>().SetBool("Die", true);
+            if (_isShootingRegime)
+            {
+                _winSecondPlayerMenu.SetActive(true);
+                GetComponent<Animator>().SetBool("Die", true);
+                GetComponent<PlayerMovement>().enabled = false;
+                GetComponent<PlayerStats>().enabled = false;
+                Invoke("LockTime", 1f);
+            }
+            else if (_isParkourRegime)
+            {
+                //Teleport player to last checkpoint
+            }
         }
+    }
+
+    void LockTime()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        Time.timeScale = 0f;
     }
 
     public bool HasInfiniteAmmo { get { return _HasInfiniteAmmo; } }
