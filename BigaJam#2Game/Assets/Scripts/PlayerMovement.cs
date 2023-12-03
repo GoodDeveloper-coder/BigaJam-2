@@ -29,11 +29,14 @@ public class PlayerMovement : MonoBehaviour
     private PlayerStats _PlayerStats;
     private GunScript _Gun;
 
+    private Vector2 _StartPoint;
     private Activatable_CheckPoint _LastCheckpoint;
 
 
     void Awake()
     {
+        _StartPoint = transform.position;
+
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _PlayerStats = GetComponent<PlayerStats>();
@@ -175,8 +178,16 @@ public class PlayerMovement : MonoBehaviour
         _LastCheckpoint = checkPoint;
     }
 
+    public void WarpToLastCheckPoint()
+    {
+        if (_LastCheckpoint != null)
+            transform.position = _LastCheckpoint.transform.position;
+        else
+            transform.position = _StartPoint;
+    }
 
 
     public PlayerStats PlayerStats { get { return _PlayerStats; } }
     public GunScript Gun { get { return _Gun; } }
+
 }
