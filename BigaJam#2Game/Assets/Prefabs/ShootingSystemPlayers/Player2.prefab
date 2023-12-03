@@ -90,7 +90,10 @@ MonoBehaviour:
   _changeWeaponKey: {fileID: -3861107572191041139, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
   _rotateGun: {fileID: 6376808397595185844}
   _playerStats: {fileID: 834346389}
-  _gunsList: []
+  _gunsList:
+  - {fileID: 11400000, guid: a8bbd60a56b3cbf4cb46ca3390801366, type: 2}
+  - {fileID: 11400000, guid: 86093578373f96740a6454aa10c3dd72, type: 2}
+  - {fileID: 11400000, guid: 69df5ae3096488d499b2d5cc47e73aca, type: 2}
   inZone: 0
 --- !u!58 &6376808397691352784
 CircleCollider2D:
@@ -541,9 +544,9 @@ MonoBehaviour:
   _dashInput: {fileID: 1231339833322790905, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
   _jumpInput: {fileID: 7097674855969335755, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
   _dashEnergyCostMultiplier: 3
-  _decellerationRate: 2
-  walkSpeed: 5
-  dashSpeed: 10
+  _decellerationRate: 15
+  walkSpeed: 3
+  dashSpeed: 6
   _playerIndex: 0
   faceRight: 1
   jumpForce: 6
