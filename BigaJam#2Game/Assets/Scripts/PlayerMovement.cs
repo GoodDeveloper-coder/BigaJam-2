@@ -67,13 +67,6 @@ public class PlayerMovement : MonoBehaviour
 
     //------- Function for first player walk ---------
 
-    private Vector2 moveVectorFirst;
-
-    void Walk()
-    {
-        Move(walkSpeed);
-    }
-
     void Dash()
     {
         if (_PlayerStats.Energy <= 0)
@@ -88,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
     private void Stop()
     {
         // Velocity needs to be less than this value for the walk animation to stop.
-        float animThreshold = 0.1f;
+        float animThreshold = 0.2f;
 
         // Using rb.velocity here makes player still animate during knockback.
         float moveAmount = _rb.velocity.x;
