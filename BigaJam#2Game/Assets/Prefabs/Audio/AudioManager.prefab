@@ -339,8 +339,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 63656792914e22b4b9659294345743af, type: 3}
   _ParkourLevelMusic:
   - {fileID: 8300000, guid: 663c02401ddc1624e987bf6415a15d03, type: 3}
+  - {fileID: 8300000, guid: 1bfb0882f2ad9ea4cbf6c6a7be60a5b2, type: 3}
+  - {fileID: 8300000, guid: 3266c3b70afcac04ea6733180e5ea79e, type: 3}
   _ShootingLevelMusic:
   - {fileID: 8300000, guid: 663c02401ddc1624e987bf6415a15d03, type: 3}
+  - {fileID: 8300000, guid: 1bfb0882f2ad9ea4cbf6c6a7be60a5b2, type: 3}
+  - {fileID: 8300000, guid: 3266c3b70afcac04ea6733180e5ea79e, type: 3}
   _AudioSource1: {fileID: 8546476557923696026}
   _AudioSource2: {fileID: 8546476557134702718}
   _MusicVolume: 1
