@@ -21,6 +21,9 @@ public class Dialog_MainMenu : Dialog_Base
         else
             Debug.LogError("Could not load key bindings as there is no PlayerInput component in this scene!");
 
+        // If PlayerPrefs doesn't have settings values, then write the defaults there now.
+        if (!PlayerPrefs.HasKey("Sfx_Volume"))
+            DefaultSettingsValues.WriteDefaultValuesToPlayerPrefs();
     }
 
     public void OnPlayParkourClicked()
