@@ -65,7 +65,7 @@ public class Dialog_AudioSettings : Dialog_Base
 
     public void OnMusicVolumeChanged(float newVolume)
     {
-        
+        _MusicManager.SetVolume(_MusicVolumeSlider.value);
     }
 
     private void GetSfxSettings()

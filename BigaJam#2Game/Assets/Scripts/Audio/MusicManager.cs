@@ -21,8 +21,12 @@ using Random = UnityEngine.Random;
 /// </remarks>
 public class MusicManager : MonoBehaviour
 {
-    [Header("Music File Search Settings")]
-    [SerializeField] private string _MusicFileExtensions = "*.mp3,*.ogg,*.wav,*.m4a";
+    [Header("Music PlayLists")]
+    [SerializeField] Playlist _PlayListToPlay = Playlist.MenuMusic;
+    [SerializeField] private List<AudioClip> _MenuMusic;
+    [SerializeField] private List<AudioClip> _ParkourLevelMusic;
+    [SerializeField] private List<AudioClip> _ShootingLevelMusic;
+    /*[SerializeField]*/ private string _MusicFileExtensions = "*.mp3,*.ogg,*.wav,*.m4a";
 
     [Header("Audio Sources")]
     [SerializeField] private AudioSource _AudioSource1;
@@ -37,7 +41,7 @@ public class MusicManager : MonoBehaviour
 
 
 
-    private List<AudioClip> _MusicTracks = new List<AudioClip>();
+    private List<AudioClip> _CurrentPlayList = new List<AudioClip>();
     private bool _MusicIsLoaded = false;
 
     private AudioSource _CurrentAudioSource;
@@ -48,6 +52,12 @@ public class MusicManager : MonoBehaviour
     private MusicManager _Instance;
 
 
+    private enum Playlist
+    {
+        MenuMusic,
+        ParkourMusic,
+        ShootingMusic,
+    }
 
     private enum MusicFadeTypes { FadeOutThenFadeIn, CrossFade }
 
@@ -76,7 +86,7 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_MusicIsLoaded || _CurrentAudioSource == null || _AudioSource1 == null || _AudioSource2 == null || _MusicTracks.Count < 1)
+        if (!_MusicIsLoaded || _CurrentAudioSource == null || _AudioSource1 == null || _AudioSource2 == null || _CurrentPlayList.Count < 1)
             return;
         else if (!IsCrossfading && GetTimeLeft(_CurrentAudioSource) <= _CrossFadeDuration)
             StartCoroutine(StartNextTrack());
@@ -86,11 +96,24 @@ public class MusicManager : MonoBehaviour
 
     private void Init()
     {
+        SetVolume(PlayerPrefs.GetFloat("Music_Volume"));
+
+        if (_PlayListToPlay == Playlist.MenuMusic)
+            _CurrentPlayList = _MenuMusic;
+        else if (_PlayListToPlay == Playlist.ParkourMusic)
+            _CurrentPlayList = _ParkourLevelMusic;
+        else if (_PlayListToPlay == Playlist.ShootingMusic)
+            _CurrentPlayList = _ShootingLevelMusic;
+
+        if (_CurrentPlayList.Count >= 0)
+            _MusicIsLoaded = true;
+
+        /* This is the old code that loaded all music files from the folder.
         _MusicFileExtensions = _MusicFileExtensions.ToLower();
 
         string musicPath = Application.streamingAssetsPath;
         StartCoroutine(LoadMusic(musicPath));
-
+        */
 
         _CurrentAudioSource = _AudioSource1;
     }
@@ -129,7 +152,7 @@ public class MusicManager : MonoBehaviour
         SwapAudioSources();
 
         //  Fade in the next track.
-        _CurrentAudioSource.clip = _MusicTracks[_CurrentMusicTrackIndex];
+        _CurrentAudioSource.clip = _CurrentPlayList[_CurrentMusicTrackIndex];
         _CurrentAudioSource.Play();
 
         yield return StartCoroutine(FadeTrack(_CurrentAudioSource, 
@@ -153,7 +176,7 @@ public class MusicManager : MonoBehaviour
         SwapAudioSources();
 
         //  Fade in the next track.
-        _CurrentAudioSource.clip = _MusicTracks[_CurrentMusicTrackIndex];
+        _CurrentAudioSource.clip = _CurrentPlayList[_CurrentMusicTrackIndex];
         _CurrentAudioSource.Play();
 
         yield return StartCoroutine(FadeTrack(_CurrentAudioSource,
@@ -205,7 +228,7 @@ public class MusicManager : MonoBehaviour
 
     private void GetNextTrack()
     {
-        if (_MusicTracks.Count < 1)
+        if (_CurrentPlayList.Count < 1)
         {
             _CurrentMusicTrackIndex = -1;
 
@@ -222,7 +245,7 @@ public class MusicManager : MonoBehaviour
 
         // Random order is disabled, so advance to the next track.
         // Check whether we are already at the end of the tracks list.
-        if (_CurrentMusicTrackIndex < _MusicTracks.Count - 1)
+        if (_CurrentMusicTrackIndex < _CurrentPlayList.Count - 1)
             _CurrentMusicTrackIndex++;
         else
             _CurrentMusicTrackIndex = 0;
@@ -230,7 +253,7 @@ public class MusicManager : MonoBehaviour
 
     private void GetRandomTrack()
     {
-        if (_MusicTracks.Count <= 1)
+        if (_CurrentPlayList.Count <= 1)
         {
             // If there is only one track, return 0 so it plays repeatedly. Otherwise we'll get stuck in the loop below forever.
             _CurrentMusicTrackIndex = 0;
@@ -242,7 +265,7 @@ public class MusicManager : MonoBehaviour
 
         while (true)
         {
-            newIndex = Random.Range(0, _MusicTracks.Count);
+            newIndex = Random.Range(0, _CurrentPlayList.Count);
 
             if (newIndex != _CurrentMusicTrackIndex)
             {
@@ -254,7 +277,7 @@ public class MusicManager : MonoBehaviour
 
     private IEnumerator LoadMusic(string musicPath)
     {
-        _MusicTracks.Clear();
+        _CurrentPlayList.Clear();
 
 
         if (!Directory.Exists(musicPath))
@@ -279,7 +302,7 @@ public class MusicManager : MonoBehaviour
             if (www.result != UnityWebRequest.Result.Success)
                 Debug.LogError(www.error);
             else
-                _MusicTracks.Add(DownloadHandlerAudioClip.GetContent(www));
+                _CurrentPlayList.Add(DownloadHandlerAudioClip.GetContent(www));
         }
 
 
@@ -291,7 +314,7 @@ public class MusicManager : MonoBehaviour
 
     private void CheckIfMusicWasLoaded()
     {
-        if (_MusicTracks.Count < 1)
+        if (_CurrentPlayList.Count < 1)
         {
             Debug.LogError("MusicManager found no music tracks!");
 
@@ -308,6 +331,13 @@ public class MusicManager : MonoBehaviour
             GetRandomTrack();
     }
 
+    public void SetVolume(float volume)
+    {
+        _MusicVolume = Mathf.Clamp(volume, 0f, 1f);
+
+        _AudioSource1.volume = _MusicVolume;
+        _AudioSource2.volume = _MusicVolume;
+    }
 
     public bool IsCrossfading { get; private set; }
 }
