@@ -15,9 +15,10 @@ public class PlayerMovement : MonoBehaviour
     public float _dashEnergyCostMultiplier = 3f;
     [Tooltip("How quickly the player decellerates.")]
     public float _decellerationRate = 2f;
-    
 
     [Header("Sounds")]
+    [SerializeField] private AudioSource _pickupPowerupSound;
+
     private Animator _anim;
 
     public float walkSpeed = 2f;
