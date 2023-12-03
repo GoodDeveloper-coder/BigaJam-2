@@ -218,7 +218,9 @@ public class PlayerStats : MonoBehaviour
             }
             else if (_isParkourRegime)
             {
-                //Teleport player to last checkpoint
+                Debug.Log("@#%$#^$%&^");
+                HP = _MaxHP;
+                _PlayerMovement.WarpToLastCheckPoint();
             }
         }
     }

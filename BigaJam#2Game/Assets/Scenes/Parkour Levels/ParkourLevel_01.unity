@@ -4965,6 +4965,14 @@ PrefabInstance:
       propertyPath: _energyImage
       value: 
       objectReference: {fileID: 1285729803}
+    - target: {fileID: 834346389, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _isParkourRegime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 834346389, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _isShootingRegime
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1404798023023878056, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
       propertyPath: _container
       value: 
@@ -5161,6 +5169,14 @@ PrefabInstance:
       propertyPath: _energyImage
       value: 
       objectReference: {fileID: 1235682849}
+    - target: {fileID: 642480152, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _isParkourRegime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 642480152, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _isShootingRegime
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2982760544101411578, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
       propertyPath: _decellerationRate
       value: 20
