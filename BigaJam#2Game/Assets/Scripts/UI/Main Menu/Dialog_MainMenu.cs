@@ -42,8 +42,6 @@ public class Dialog_MainMenu : Dialog_Base
 
     public void OnExitClicked()
     {
-        Debug.Log("Exit clicked.");
-
         Application.Quit();
     }
 }

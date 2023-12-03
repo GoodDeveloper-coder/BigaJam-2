@@ -6,15 +6,6 @@
             "id": "760852f9-619e-4f1e-b68a-f26297f0bc8e",
             "actions": [
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "3149acaf-82ad-4986-b98d-d3863838fb22",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "Value",
                     "id": "a8e55250-4087-4189-b6c1-64062f33ac40",
@@ -22,6 +13,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "f646fd7d-e139-452b-84b3-d4ad834b3ed2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "3149acaf-82ad-4986-b98d-d3863838fb22",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Shoot",
@@ -36,15 +45,6 @@
                     "name": "Reload",
                     "type": "Button",
                     "id": "db6798b4-d1e9-4216-af81-d3d97fbb2b3a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Dash",
-                    "type": "Button",
-                    "id": "f646fd7d-e139-452b-84b3-d4ad834b3ed2",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -70,17 +70,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "d6eae59c-dae7-440c-99d7-b718ad5fbccd",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "1D Axis",
                     "id": "b222c950-f679-4a97-aec0-b3251d2095fc",
@@ -138,45 +127,12 @@
                 },
                 {
                     "name": "",
-                    "id": "ca9c6382-0e49-441c-9058-c30b1ddb3846",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "be1c0af2-5ec6-496d-b9d5-69ffb23cd10c",
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "ChangeWeapon",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "38e20eb5-80b0-413d-af4a-0604d239ba45",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SkipCutscene",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "77488293-6755-4f3e-9418-d0cd22df6140",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SkipCutscene",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -190,6 +146,28 @@
                     "action": "SkipCutscene",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d6eae59c-dae7-440c-99d7-b718ad5fbccd",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca9c6382-0e49-441c-9058-c30b1ddb3846",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -198,15 +176,6 @@
             "id": "dd2863cc-2aa0-48a0-b60b-a5effa603ce5",
             "actions": [
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "585eff1f-61f8-4e4b-9440-3abb21cb42bc",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "Value",
                     "id": "9f9a6dca-85c4-40cd-a0c8-76db82072199",
@@ -214,6 +183,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "55cace00-5511-4d73-bf90-493823c5a013",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "585eff1f-61f8-4e4b-9440-3abb21cb42bc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Shoot",
@@ -234,15 +221,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dash",
-                    "type": "Button",
-                    "id": "55cace00-5511-4d73-bf90-493823c5a013",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "ChangeWeapon",
                     "type": "Button",
                     "id": "c228c061-6bec-42f5-b7b2-e6145675adf2",
@@ -250,20 +228,18 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SkipCutscene",
+                    "type": "Button",
+                    "id": "af59d57b-de62-438a-b5d6-46c4aa0f7cf9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "471d1c46-504a-4635-aa1b-6dc6a9a9a99e",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "1D Axis",
                     "id": "9a82ce87-ef68-4fbe-a674-793ba2ff4ab8",
@@ -321,6 +297,28 @@
                 },
                 {
                     "name": "",
+                    "id": "8c1bab87-de9a-4405-a49b-2328d1961727",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeWeapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82166021-9f2b-4dd8-9e94-5ce6a1ba3273",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipCutscene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6c5b4195-975b-4bf1-8d91-c0e6b38b67e8",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -332,12 +330,12 @@
                 },
                 {
                     "name": "",
-                    "id": "8c1bab87-de9a-4405-a49b-2328d1961727",
-                    "path": "<Keyboard>/numpad1",
+                    "id": "471d1c46-504a-4635-aa1b-6dc6a9a9a99e",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ChangeWeapon",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

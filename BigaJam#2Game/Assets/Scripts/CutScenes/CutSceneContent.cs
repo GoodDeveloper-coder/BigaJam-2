@@ -26,8 +26,11 @@ public class CutSceneContent : ScriptableObject
     [Tooltip("Whether or not the player can skip the entire cutscene by invoking InputAction specified by the SkipInputAction setting. If no InputAction is set for skipping, then it's the same as setting this option to false.")]
     public bool CanSkipCutScene = true;
 
-    [Tooltip("Specifies which InputAction should cause the cutscene to be skipped entirely. If this is left null, then the cutscene can not be skipped.")]
-    public InputActionReference SkipCutSceneInputAction;
+    [Tooltip("Specifies which InputAction for Player 1 should cause the cutscene to be skipped entirely. If this is left null, then the cutscene can not be skipped.")]
+    public InputActionReference Player1_SkipCutSceneInputAction;
+
+    [Tooltip("Specifies which InputAction for Player 2 should cause the cutscene to be skipped entirely. If this is left null, then the cutscene can not be skipped.")]
+    public InputActionReference Player2_SkipCutSceneInputAction;
 
 
     [Header("Audio Settings")]
