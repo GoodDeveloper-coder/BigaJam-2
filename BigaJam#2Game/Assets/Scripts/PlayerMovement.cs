@@ -32,12 +32,12 @@ public class PlayerMovement : MonoBehaviour
     private Activatable_CheckPoint _LastCheckpoint;
 
 
-    private void Awake()
+    void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _PlayerStats = GetComponent<PlayerStats>();
-        _Gun = GetComponentInChildren<GunScript>();
+        _Gun = GetComponentInChildren<GunScript>(true);
 
         _jumpInput.action.performed += Jump;
     }
@@ -157,10 +157,10 @@ public class PlayerMovement : MonoBehaviour
     //-----------------------------------------------------------------
 
     //------- Function for take players damage ---------
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
         StartCoroutine(TakeDamageTimer());
-        GetComponent<PlayerStats>().RemoveHP(10f);
+        GetComponent<PlayerStats>().RemoveHP(damage);
     }
 
     IEnumerator TakeDamageTimer()

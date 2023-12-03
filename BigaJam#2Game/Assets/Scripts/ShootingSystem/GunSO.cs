@@ -7,10 +7,12 @@ using UnityEngine;
 public class GunSO : ScriptableObject
 {
     public Sprite gunSprite;
+    public AmmoSO AmmoType;
+    public int StartingAmmo;
     public int MaxGunAmmo;
     public float Cooldown;
     public AnimatorController animator;
 
     [HideInInspector]
-    public int Ammo = 0;
+    public int Ammo;
 }

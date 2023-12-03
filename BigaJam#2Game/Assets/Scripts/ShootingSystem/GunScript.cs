@@ -5,9 +5,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Pool))]
+[RequireComponent(typeof(BulletPoolsCollection))]
 public class GunScript : MonoBehaviour
 {
+    [SerializeField] private Bullet _BulletPrefab;
     [SerializeField] private Transform _bulletSpawnPos;
     [SerializeField] private InputActionReference _shootKey;
     [SerializeField] private InputActionReference _reloadKey;
@@ -22,20 +23,31 @@ public class GunScript : MonoBehaviour
     private int _gunIndex;
 
     private GameObject target;
-    private Pool _pool;
+    private BulletPoolsCollection _BulletPools;
     private Animator _anim;
     private SpriteRenderer _sp;
 
-    void Start()
+    private void Awake()
     {
-        _pool = GetComponent<Pool>();
         _anim = GetComponent<Animator>();
         _sp = GetComponent<SpriteRenderer>();
-        
+
+        _BulletPools = GetComponent<BulletPoolsCollection>();
+
+        _shootKey.action.performed += Shoot;
+        _reloadKey.action.performed += Reload;
+        _changeWeaponKey.action.performed += ChangeGun;
+
+        InitAllGuns();
         _gunIndex = 0;
-        _sp.sprite = _gunsList[_gunIndex].gunSprite;
-        CurrentGun.Ammo = CurrentGun.MaxGunAmmo;
+        _playerStats.ReloadGun(this);
+        _sp.sprite = CurrentGun.gunSprite;
     }
+
+    void Start()
+    {
+        
+   }
 
     void Update()
     {
@@ -44,18 +56,23 @@ public class GunScript : MonoBehaviour
             LookAtTarget();
         }
     }
-
-    private void Awake()
-    {
-        _shootKey.action.performed += Shoot;
-        _reloadKey.action.performed += Reload;
-        _changeWeaponKey.action.performed += ChangeGun;
-    }
-    
+   
     private void OnDestroy()
     {
         _shootKey.action.performed -= Shoot;
         _reloadKey.action.performed -= Reload;
+    }
+
+    private void InitAllGuns()
+    {
+        for (int i = 0; i < _gunsList.Count; i++)
+            InitGun(_gunsList[i]);
+    
+    }
+
+    private void InitGun(GunSO gun)
+    {
+        gun.Ammo = gun.StartingAmmo;
     }
 
     public void ChangeGun(InputAction.CallbackContext ctx)
@@ -70,11 +87,12 @@ public class GunScript : MonoBehaviour
         }
 
         _sp.sprite = CurrentGun.gunSprite;
-        _playerStats.CheckAmmoUI();
+        _playerStats.ReloadGun(this);
         _anim.runtimeAnimatorController = CurrentGun.animator;
     }
     public void AddGun(GunSO gun)
     {
+        InitGun(gun);
         _gunsList.Add(gun);
     }
     //--------------Function for gun following player--------------\\ 
@@ -115,7 +133,7 @@ public class GunScript : MonoBehaviour
         if (CurrentGun.Ammo > 0 && _canShoot)
         {
             CurrentGun.Ammo--;
-            _pool.GetFreeElement(_bulletSpawnPos.position, _bulletSpawnPos.rotation);
+            _BulletPools.GetPool(CurrentGun.AmmoType).GetFreeElement(_bulletSpawnPos.position, _bulletSpawnPos.rotation);
             _canShoot = false;
             StartCoroutine(ShootCooldown());
             _anim.SetTrigger("Shoot");
@@ -133,7 +151,7 @@ public class GunScript : MonoBehaviour
     {
         if (_canReload)
         {
-            _playerStats.ReloadGun();
+            _playerStats.ReloadGun(this);
             _canReload = false;
             Invoke("UnlockReload", 5.0f);
         }

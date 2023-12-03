@@ -6,29 +6,32 @@ using UnityEngine;
 
 public class Pool : MonoBehaviour
 {
-    [SerializeField] private PoolObject _prefab;
+    [SerializeField] protected PoolObject _prefab;
 
-    [Space(height: 10)][SerializeField] Transform _container;
-    [SerializeField] private int _minCapacity;
-    [SerializeField] private int _maxCapacity = 100;
-    [Space(height: 10)][SerializeField] private bool _autoExpand;
+    [Space(height: 10)]
+    [SerializeField] protected Transform _container;
+    [SerializeField] protected int _minCapacity = 100;
+    [SerializeField] protected int _maxCapacity = 200;
+    
+    [Space(height: 10)]
+    [SerializeField] protected bool _autoExpand;
 
-    private List<PoolObject> _pool;
+    protected List<PoolObject> _pool;
 
-    private void Awake()
+
+
+    protected void Awake()
+    {
+
+    }
+
+    protected void Start()
     {
         CreatePool();
 
-        if (_container = null)
-            _container = transform;
     }
 
-    private void Start()
-    {
-
-    }
-
-    private void OnValidate()
+    protected void OnValidate()
     {
         if (_autoExpand)
         {
@@ -36,8 +39,25 @@ public class Pool : MonoBehaviour
         }
     }
 
-    private void CreatePool()
+    protected void CheckPrefab(PoolObject prefab)
     {
+        if (prefab == null)
+            throw new Exception("Failed to create new Pool because the passed in prefab is null!");
+    }
+
+    protected void CreatePool()
+    {
+        if (_container == null)
+            _container = transform;
+
+        // Abort if the pool is already initialized. This will be the case when this function is called by the BulletPool subclass, and then Start() gets called by Unity shortly thereafter.
+        if (_pool != null)
+            return;
+
+
+        CheckPrefab(_prefab);
+
+
         _pool = new List<PoolObject>(_minCapacity);
 
         for (int i = 0; i < _minCapacity; i++)
@@ -46,7 +66,7 @@ public class Pool : MonoBehaviour
         }
     }
 
-    private PoolObject CreateElement(bool isActiveByDefault = false)
+    protected virtual PoolObject CreateElement(bool isActiveByDefault = false)
     {
         var createdObject = Instantiate(_prefab, _container);
         createdObject.gameObject.SetActive(isActiveByDefault);
@@ -77,7 +97,10 @@ public class Pool : MonoBehaviour
         var element = GetFreeElement();
         var tr = TryGetTrailRenderer(element.gameObject);
         element.transform.position = position;
-        tr.Clear();
+        
+        if (tr != null)
+            tr.Clear();
+
         return element;
     }
 
@@ -117,4 +140,5 @@ public class Pool : MonoBehaviour
         }
         return null;
     }
+
 }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753a2c636bc0f494585735d2fd00a737, type: 3}
+  m_Name: Gun2
+  m_EditorClassIdentifier: 
+  gunSprite: {fileID: -1839770981, guid: af3a5d64fd531da46b83b29d7ba6dcc7, type: 3}
+  AmmoType: {fileID: 11400000, guid: 78b48be4f8998eb41858fca5aa08b4af, type: 2}
+  StartingAmmo: 0
+  MaxGunAmmo: 30
+  Cooldown: 0.8
+  animator: {fileID: 9100000, guid: bfd17ebfc3f51d047820649f1f21302d, type: 2}
+  Ammo: 2

@@ -218,6 +218,7 @@ MonoBehaviour:
   _Duration: 5
   _DoesRespawn: 1
   _RespawnTime: 10
+  _AmmoType: {fileID: 11400000, guid: 78b48be4f8998eb41858fca5aa08b4af, type: 2}
   _addAmmo: 20
 --- !u!1 &93757673
 GameObject:
@@ -5056,6 +5057,26 @@ PrefabInstance:
       propertyPath: _energyImage
       value: 
       objectReference: {fileID: 1285729803}
+    - target: {fileID: 1404798023023878056, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _container
+      value: 
+      objectReference: {fileID: 1472007590}
+    - target: {fileID: 5779776068364248168, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _container
+      value: 
+      objectReference: {fileID: 1472007590}
+    - target: {fileID: 5779776068364248168, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _maxCapacity
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779776068364248168, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _minCapacity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779776068364248168, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _BulletPrefab
+      value: 
+      objectReference: {fileID: 6200676627783771692, guid: d028c633a2391994281aa4471741e84a, type: 3}
     - target: {fileID: 6376808397691352785, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
       propertyPath: _gunAmmoText
       value: 
@@ -5064,6 +5085,10 @@ PrefabInstance:
       propertyPath: _playerStats
       value: 
       objectReference: {fileID: 312407201}
+    - target: {fileID: 6376808397691352785, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _BulletPrefab
+      value: 
+      objectReference: {fileID: -6988238566405567896, guid: d028c633a2391994281aa4471741e84a, type: 3}
     - target: {fileID: 6376808397691352785, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
       propertyPath: _changeWeaponKey
       value: 
@@ -5140,7 +5165,9 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 80
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6376808397691352787, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+    - {fileID: 1404798023023878056, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
 --- !u!1001 &6799531784314194478
 PrefabInstance:
@@ -5173,6 +5200,34 @@ PrefabInstance:
       propertyPath: _decellerationRate
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4448257925089041948, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _container
+      value: 
+      objectReference: {fileID: 1472007590}
+    - target: {fileID: 4448257925089041948, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _maxCapacity
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4448257925089041948, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _minCapacity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446236107315563260, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _container
+      value: 
+      objectReference: {fileID: 1472007590}
+    - target: {fileID: 6446236107315563260, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _maxCapacity
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446236107315563260, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _minCapacity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446236107315563260, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _BulletPrefab
+      value: 
+      objectReference: {fileID: 6200676627783771692, guid: d028c633a2391994281aa4471741e84a, type: 3}
     - target: {fileID: 6799531782699075767, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
       propertyPath: m_Mass
       value: 80
@@ -5238,6 +5293,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1760783818}
     - target: {fileID: 6799531784574167811, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
+      propertyPath: _BulletPrefab
+      value: 
+      objectReference: {fileID: -6988238566405567896, guid: d028c633a2391994281aa4471741e84a, type: 3}
+    - target: {fileID: 6799531784574167811, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
       propertyPath: _changeWeaponKey
       value: 
       objectReference: {fileID: -7074723294387888100, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
@@ -5261,5 +5320,6 @@ PrefabInstance:
       propertyPath: _gunsList.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: 69df5ae3096488d499b2d5cc47e73aca, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6799531784574167810, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ad08b0936e8a611458e405fc03b8eaf3, type: 3}
