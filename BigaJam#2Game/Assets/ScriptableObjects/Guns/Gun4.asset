@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunSprite: {fileID: -1550201761, guid: 3067a879767326343813c218f482e6e8, type: 3}
   AmmoType: {fileID: 11400000, guid: 78b48be4f8998eb41858fca5aa08b4af, type: 2}
-  StartingAmmo: 0
+  StartingAmmo: 5
   MaxGunAmmo: 7
   Cooldown: 0.5
   animator: {fileID: 9100000, guid: d3cc1db986d846949a0a67e81be26f34, type: 2}
