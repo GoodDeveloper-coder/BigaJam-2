@@ -15,7 +15,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Parkour Levels/ParkourLevel_01.unity
     guid: 3ea718b97e18457439c34d3cad959661
   - enabled: 1
-    path: Assets/Scenes/Shooting Levels/ShootingLevel_01 1.unity
+    path: Assets/Scenes/Parkour Levels/ParkourLevel_02.unity
+    guid: 3accb61b5fee20346bc200df238db0f5
+  - enabled: 1
+    path: Assets/Scenes/Parkour Levels/ParkourLevel_03.unity
+    guid: d60a9f8d749d4fc4bb4ebefa0d8b6ebd
+  - enabled: 1
+    path: Assets/Scenes/Shooting Levels/ShootingLevel_01.unity
     guid: 651e831ee17747b449f721d8c901a554
   - enabled: 1
     path: Assets/Scenes/Shooting Levels/ShootingLevel_02.unity

@@ -21,8 +21,8 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 4294967295
   Text:
-    Font: {fileID: 0}
-    FontSize: 30
+    Font: {fileID: 11400000, guid: 9a2fd2f132c201a419b80a8f59eff192, type: 2}
+    FontSize: 25
     FontStyle: 0
     Alignment: 257
     Color:
@@ -32,7 +32,7 @@ MonoBehaviour:
     WidthPercentage: 0.5
     PaddingAbove: 30
     DisplayMode: 2
-    TypingAnimationSound: {fileID: 0}
+    TypingAnimationSound: {fileID: 8300000, guid: 917148fde12421d4a86dd1ae57083889, type: 3}
     TypingAnimationSoundVolume: 1
     CanSpeedUpText: 1
     CanSkipPage: 1

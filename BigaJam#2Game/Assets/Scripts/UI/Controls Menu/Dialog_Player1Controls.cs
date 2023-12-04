@@ -13,23 +13,26 @@ public class Dialog_Player1Controls : Dialog_Base
     [SerializeField] private Dialog_ControlsMenu _ControlsMenu;
 
 
-
     public void OnResetAllBindings()
     {
+        ButtonClickPlayer.Play();
+
+
         RebindActionUI[] rebindActionUIs = GetComponentsInChildren<RebindActionUI>();
 
 
         foreach (RebindActionUI rebindUI in rebindActionUIs)
         {
-            Button resetButton = rebindUI.transform.Find("ResetToDefaultButton").transform.Find("ResetButton").GetComponent<Button>();
-
-            resetButton.onClick.Invoke();
+            rebindUI.ResetToDefault(false);
         }
 
     }
 
     public void OnReturnToControlsMenuClicked()
     {
+        ButtonClickPlayer.Play();
+
+
         PlayerInput playerInputComponent = FindObjectOfType<PlayerInput>();
         if (playerInputComponent != null)
             KeyBindings.SaveKeyBindings(playerInputComponent);
@@ -37,7 +40,7 @@ public class Dialog_Player1Controls : Dialog_Base
             Debug.LogError("Could not save key bindings as there is no PlayerInput component in this scene!");
 
 
-        this.CloseDialog();
+        CloseDialog();
         _ControlsMenu.OpenDialog();
     }
 

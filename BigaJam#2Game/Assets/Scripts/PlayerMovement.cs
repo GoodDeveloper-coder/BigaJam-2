@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("How quickly the player decellerates.")]
     public float _decellerationRate = 2f;
 
-    [SerializeField]
-    private AudioClip _pickupPowerupSound;
+    [SerializeField] private AudioSource _PickupPowerUp;
+    [SerializeField] private AudioSource _JumpSound;
 
 
     [Header("Sounds")]
@@ -157,6 +157,7 @@ public class PlayerMovement : MonoBehaviour
         if (onGround)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
+            _JumpSound.Play();
         }
     }
 
@@ -211,7 +212,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void PickupPowerupSound()
     {
-        AudioSource.PlayClipAtPoint(_pickupPowerupSound, transform.position);
+        _PickupPowerUp.Play();
     }
 
     public PlayerStats PlayerStats { get { return _PlayerStats; } }

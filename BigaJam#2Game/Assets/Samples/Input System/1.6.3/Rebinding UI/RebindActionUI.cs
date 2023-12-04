@@ -215,8 +215,12 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         /// <summary>
         /// Remove currently applied binding overrides.
         /// </summary>
-        public void ResetToDefault()
+        public void ResetToDefault(bool playClickSound = true)
         {
+            if (playClickSound)
+                ButtonClickPlayer.Play();
+
+
             // CUSTOM CODE: I modified this function call to take a new first pararmeter. See the comments on the ResolveActionAndBinding() function.
             if (!ResolveActionAndBinding(m_Action, out var action, out var bindingIndex))
                 return;

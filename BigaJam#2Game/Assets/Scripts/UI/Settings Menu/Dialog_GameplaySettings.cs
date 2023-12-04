@@ -14,6 +14,8 @@ public class Dialog_GameplaySettings : Dialog_Base
 
     public void OnReturnToSettingsMenuClicked()
     {
+        ButtonClickPlayer.Play();
+
         this.CloseDialog();
         _SettingsMenu.OpenDialog();
     }

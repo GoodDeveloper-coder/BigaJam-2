@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0.55049276, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.6745283, g: 1, b: 0.98391074, a: 1}
+    m_HighlightedColor: {r: 0.4, g: 0.7294118, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 1, g: 0.6291137, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -639,7 +639,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0.55049276, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.6745283, g: 1, b: 0.98391074, a: 1}
+    m_HighlightedColor: {r: 0.4, g: 0.7294118, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 1, g: 0.6291137, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0.55049276, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.6745283, g: 1, b: 0.98391074, a: 1}
+    m_HighlightedColor: {r: 0.4, g: 0.7294118, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 1, g: 0.6291137, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.44705883, g: 0.73333335, b: 1, a: 0.78431374}
+  m_Color: {r: 0.7311321, g: 0.87033325, b: 1, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1166,6 +1166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _SettingsMenu: {fileID: 0}
+  _ButtonClickSound: {fileID: 0}
 --- !u!222 &4785366414298819619
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1304,7 +1305,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0.55049276, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.6745283, g: 1, b: 0.98391074, a: 1}
+    m_HighlightedColor: {r: 0.4009434, g: 0.72983706, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 1, g: 0.6291137, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +31,9 @@ public class Dialog_AudioSettings : Dialog_Base
     }
 
     public void OnReturnToSettingsMenuClicked()
-    {       
+    {
+        ButtonClickPlayer.Play();
+
         SaveSfxSettings();
 
         this.CloseDialog();
@@ -39,6 +42,8 @@ public class Dialog_AudioSettings : Dialog_Base
 
     public void OnResetAllClicked()
     {
+        ButtonClickPlayer.Play();
+
         _SfxVolumeSlider.value = DefaultSettingsValues.SfxVolume;
         _MusicVolumeSlider.value = DefaultSettingsValues.MusicVolume;
     }
@@ -60,13 +65,34 @@ public class Dialog_AudioSettings : Dialog_Base
 
     public void OnSfxVolumeChanged(float newVolume)
     {
+        List<AudioSource> sources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None).ToList();
+
+        int skipped = 0;
+        // Set all sfx audio sources to new volume level.
+        for (int i = 0; i < sources.Count; i++)
+        {
+            AudioSource curSource = sources[i];
+
+            // Ignore audio sources that belong to the music manager.
+            Transform t = curSource.transform.parent;
+            if (t == null || (t != null && t.GetComponent<MusicManager>() == null))
+            {
+                curSource.volume = newVolume;
+            }
+            else
+            {
+                skipped++;
+            }
+
+        } // end for i
 
     }
 
     public void OnMusicVolumeChanged(float newVolume)
     {
         _MusicManager.SetVolume(_MusicVolumeSlider.value);
-    }
+    }   
+
 
     private void GetSfxSettings()
     {
