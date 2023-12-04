@@ -21,6 +21,7 @@ public class VictoryMenu : MonoBehaviour
 
     public void OnPlayAgainClicked()
     {
+        Time.timeScale = 1.0f;
         ButtonClickPlayer.Play();
 
         if (SceneManager.GetActiveScene().name.StartsWith("ParkourLevel"))
@@ -31,6 +32,8 @@ public class VictoryMenu : MonoBehaviour
 
     public void OnReturnToMainMenuClicked()
     {
+        Time.timeScale = 1.0f;
+
         ButtonClickPlayer.Play();
 
         SceneManager.LoadScene("MainMenuScene");
