@@ -29,7 +29,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shooting Levels/ShootingLevel_03.unity
     guid: e6fef4468d788cd47b95aed5beff031d
-  - enabled: 1
-    path: Assets/Scenes/ShootingSystemTest.unity
-    guid: 44680e09de8fb10438122c44df73d1d0
   m_configObjects: {}

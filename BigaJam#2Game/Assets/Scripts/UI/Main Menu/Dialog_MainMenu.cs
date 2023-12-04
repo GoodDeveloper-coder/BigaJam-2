@@ -56,14 +56,12 @@ public class Dialog_MainMenu : Dialog_Base
     public void OnPlayParkourClicked()
     {
         ButtonClickPlayer.Play();
-        LevelManager.LoadRandomLevel(LevelTypes.Parkour);
         StartCoroutine(StartStoryCutScene(LevelTypes.Parkour));
     }
 
     public void OnPlayShootingClicked()
     {
         ButtonClickPlayer.Play();
-        LevelManager.LoadRandomLevel(LevelTypes.Shooting);
         StartCoroutine(StartStoryCutScene(LevelTypes.Shooting));
     }
 

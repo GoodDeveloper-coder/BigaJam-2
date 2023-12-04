@@ -28,12 +28,12 @@ public static class LevelManager
         if (levelType == LevelTypes.Parkour)
         {
             index = Random.Range(0, _ParkourLevelSceneNames.Count);
-            selectedSceneName = _AllSceneNames[index];
+            selectedSceneName = _ParkourLevelSceneNames[index];
         }
         else if (levelType == LevelTypes.Shooting)
         {
             index = Random.Range(0, _ShootingLevelSceneNames.Count);
-            selectedSceneName = _AllSceneNames[index];
+            selectedSceneName = _ShootingLevelSceneNames[index];
         }
 
         SceneManager.LoadScene(selectedSceneName);
