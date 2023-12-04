@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13c72b5f4c81644fad554762f0ec5be, type: 3}
+  m_Name: Test Bullet
+  m_EditorClassIdentifier: 
+  Damage: 0
+  Speed: 2000
+  KnockBackForce: 1
+  LifeTime: 1.5
+  PowerWhenTouchWithPlayer: 1000
+  StartingAmmo: 30
+  MaxAmmo: 100
+  BulletHitParticle: {fileID: 897613125598634042, guid: 2b7e0d702a17a2741b2e545f8d111d96, type: 3}
+  HasInfiniteAmmo: 0
