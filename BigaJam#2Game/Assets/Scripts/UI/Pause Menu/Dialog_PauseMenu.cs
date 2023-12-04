@@ -54,19 +54,32 @@ public class Dialog_PauseMenu : Dialog_Base
         CloseDialog();
     }
 
+    public void OnResumePlayClicked()
+    {
+        ButtonClickPlayer.Play();
+
+        CloseDialog();
+    }
+
     public void OnSettingsClicked()
     {
-        this.CloseDialog();
+        ButtonClickPlayer.Play();
+
+        CloseDialog();
 
         _SettingsMenu.OpenDialog();
     }
 
     public void OnMainMenuClicked()
     {
+        ButtonClickPlayer.Play();
+
         SceneManager.LoadScene("MainMenuScene");
     }
     public void OnExitClicked()
     {
+        ButtonClickPlayer.Play();
+
         Application.Quit();
     }
 

@@ -5,7 +5,12 @@ using UnityEngine;
 
 
 public abstract class Dialog_Base : MonoBehaviour
-{  
+{
+
+    void Awake()
+    {
+    }
+
     public virtual void CloseDialog()
     {
         gameObject.SetActive(false);
@@ -16,7 +21,6 @@ public abstract class Dialog_Base : MonoBehaviour
         gameObject.SetActive(true);
         Cursor.visible = true;
     }
-
 
 
     public bool IsOpen {  get { return gameObject.activeSelf; } }

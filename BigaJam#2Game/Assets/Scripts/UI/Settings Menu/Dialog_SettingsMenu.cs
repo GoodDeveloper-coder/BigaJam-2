@@ -19,24 +19,32 @@ public class Dialog_SettingsMenu : Dialog_Base
 
     public void OnGameplayClicked()
     {
+        ButtonClickPlayer.Play();
+
         this.CloseDialog();
         _GameplaySettings.OpenDialog();
     }
 
     public void OnControlsClicked()
     {
+        ButtonClickPlayer.Play();
+
         this.CloseDialog();
         _ControlsMenu.OpenDialog();
     }
 
     public void OnAudioClicked()
     {
+        ButtonClickPlayer.Play();
+
         this.CloseDialog();
         _AudioSettings.OpenDialog();
     }
 
     public void OnReturnToMainMenuClicked()
     {
+        ButtonClickPlayer.Play();
+
         this.CloseDialog();
 
 

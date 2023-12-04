@@ -12,9 +12,21 @@ public class Dialog_MainMenu : Dialog_Base
     [SerializeField]
     private Dialog_SettingsMenu _SettingsMenu;
 
+    [SerializeField] AudioClip _ButtonClickSound;
 
-    private void Awake()
+    private CutScenePlayer _CutScenePlayer;
+
+
+    void Awake()
     {
+        ButtonClickPlayer.ButtonClickSound = _ButtonClickSound;
+
+
+        _CutScenePlayer = FindObjectOfType<CutScenePlayer>();
+        if (_CutScenePlayer == null)
+            Debug.LogError("There is no CutScenePlayer in this scene!");
+
+
         PlayerInput playerInputComponent = FindObjectOfType<PlayerInput>();
         if (playerInputComponent != null)
             KeyBindings.LoadKeyBindings(playerInputComponent);
@@ -26,18 +38,39 @@ public class Dialog_MainMenu : Dialog_Base
             DefaultSettingsValues.WriteDefaultValuesToPlayerPrefs();
     }
 
+    private IEnumerator WaitForCutSceneToEnd()
+    {
+        while (_CutScenePlayer.IsPlaying)
+            yield return null;
+    }
+        
+    private IEnumerator StartStoryCutScene(string sceneToLoad)
+    {
+        _CutScenePlayer.Play();
+
+        yield return StartCoroutine(WaitForCutSceneToEnd());
+
+        SceneManager.LoadScene(sceneToLoad);
+    }
+
     public void OnPlayParkourClicked()
     {
-        SceneManager.LoadScene("ParkourLevel_01");
+        ButtonClickPlayer.Play();
+
+        StartCoroutine(StartStoryCutScene("ParkourLevel_01"));
     }
 
     public void OnPlayShootingClicked()
     {
-        SceneManager.LoadScene("ShootingLevel_01 1");
+        ButtonClickPlayer.Play();
+
+        StartCoroutine(StartStoryCutScene("ShootingLevel_01 1"));
     }
 
     public void OnSettingsClicked()
     {
+        ButtonClickPlayer.Play();
+
         this.CloseDialog();
 
         _SettingsMenu.OpenDialog();
@@ -45,6 +78,8 @@ public class Dialog_MainMenu : Dialog_Base
 
     public void OnExitClicked()
     {
+        ButtonClickPlayer.Play();
+
         Application.Quit();
     }
 }
