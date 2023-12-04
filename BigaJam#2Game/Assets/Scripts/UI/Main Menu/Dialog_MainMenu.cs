@@ -44,27 +44,27 @@ public class Dialog_MainMenu : Dialog_Base
             yield return null;
     }
         
-    private IEnumerator StartStoryCutScene(string sceneToLoad)
+    private IEnumerator StartStoryCutScene(LevelTypes levelType)
     {
         _CutScenePlayer.Play();
 
         yield return StartCoroutine(WaitForCutSceneToEnd());
 
-        SceneManager.LoadScene(sceneToLoad);
+        LevelManager.LoadRandomLevel(levelType);
     }
 
     public void OnPlayParkourClicked()
     {
         ButtonClickPlayer.Play();
-
-        StartCoroutine(StartStoryCutScene("ParkourLevel_01"));
+        LevelManager.LoadRandomLevel(LevelTypes.Parkour);
+        StartCoroutine(StartStoryCutScene(LevelTypes.Parkour));
     }
 
     public void OnPlayShootingClicked()
     {
         ButtonClickPlayer.Play();
 
-        StartCoroutine(StartStoryCutScene("ShootingLevel_01 1"));
+        StartCoroutine(StartStoryCutScene(LevelTypes.Shooting));
     }
 
     public void OnSettingsClicked()
