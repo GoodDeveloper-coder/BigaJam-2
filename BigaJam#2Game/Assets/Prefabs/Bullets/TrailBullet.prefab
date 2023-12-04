@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1864307131
+  m_SortingLayer: -1
   m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -150,11 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70c2a6e5024733489be5759b320135e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2900
-  _lifeTime: 3
-  _powerWhenTouchWithPlayer: 0
-  _bulletHitParticle: {fileID: 897613125598634042, guid: 2b7e0d702a17a2741b2e545f8d111d96, type: 3}
-  _knockBackForce: 1
+  _AmmoType: {fileID: 11400000, guid: 78b48be4f8998eb41858fca5aa08b4af, type: 2}
 --- !u!96 &2119808950908012010
 TrailRenderer:
   serializedVersion: 2
@@ -176,7 +172,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -194,8 +190,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1864307131
+  m_SortingLayer: -1
   m_SortingOrder: 10
   m_Time: 0.4
   m_Parameters:

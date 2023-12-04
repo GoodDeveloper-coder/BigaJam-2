@@ -23,6 +23,10 @@ public class VictoryMenu : MonoBehaviour
     {
         ButtonClickPlayer.Play();
 
+        if (SceneManager.GetActiveScene().name.StartsWith("ParkourLevel"))
+            LevelManager.LoadRandomLevel(LevelTypes.Parkour);
+        else if (SceneManager.GetActiveScene().name.StartsWith("ShootingLevel"))
+            LevelManager.LoadRandomLevel(LevelTypes.Shooting);
     }
 
     public void OnReturnToMainMenuClicked()

@@ -167,6 +167,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1735165698350497108, guid: 96e566837624735429deb07b445d77ba, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735165698350497108, guid: 96e566837624735429deb07b445d77ba, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735165698350497108, guid: 96e566837624735429deb07b445d77ba, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735165698350497108, guid: 96e566837624735429deb07b445d77ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -564,7 +576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8597634840014267513, guid: 050527b2ad42d294b8f60572f32f2ca7, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8597634840014267513, guid: 050527b2ad42d294b8f60572f32f2ca7, type: 3}
       propertyPath: m_LocalScale.x
@@ -642,6 +654,22 @@ PrefabInstance:
     - target: {fileID: 1478678005194299079, guid: ee9ca2715d539ef4b9c3692a9fb47a56, type: 3}
       propertyPath: m_Name
       value: Background_Day
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478678005194299079, guid: ee9ca2715d539ef4b9c3692a9fb47a56, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076213195416313893, guid: ee9ca2715d539ef4b9c3692a9fb47a56, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076213195416313893, guid: ee9ca2715d539ef4b9c3692a9fb47a56, type: 3}
+      propertyPath: m_SortingOrder
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076213195416313893, guid: ee9ca2715d539ef4b9c3692a9fb47a56, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -364753063
       objectReference: {fileID: 0}
     - target: {fileID: 4832324512458856428, guid: ee9ca2715d539ef4b9c3692a9fb47a56, type: 3}
       propertyPath: m_RootOrder
@@ -1592,7 +1620,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1252185407 stripped
 MonoBehaviour:
@@ -2061,7 +2089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8546476557663836607, guid: 08924004631d1bf44b939f31fcae3144, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8546476557663836607, guid: 08924004631d1bf44b939f31fcae3144, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2248,7 +2276,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944517986
 GameObject:
@@ -6112,6 +6140,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1959311179}
     - target: {fileID: 834346389, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _dieSound
+      value: 
+      objectReference: {fileID: 6376808397978660351}
+    - target: {fileID: 834346389, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
       propertyPath: _energyImage
       value: 
       objectReference: {fileID: 1285729803}
@@ -6173,6 +6205,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+--- !u!82 &6376808397978660351 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2507237380407990019, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+  m_PrefabInstance: {fileID: 6376808397978660350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6799531784314194478
 PrefabInstance:
   m_ObjectHideFlags: 0
