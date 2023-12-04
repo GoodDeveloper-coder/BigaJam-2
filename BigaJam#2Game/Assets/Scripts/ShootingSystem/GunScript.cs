@@ -8,7 +8,6 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(BulletPoolsCollection))]
 public class GunScript : MonoBehaviour
 {
-    [SerializeField] private Bullet _BulletPrefab;
     [SerializeField] private Transform _bulletSpawnPos;
     [SerializeField] private InputActionReference _shootKey;
     [SerializeField] private InputActionReference _reloadKey;
