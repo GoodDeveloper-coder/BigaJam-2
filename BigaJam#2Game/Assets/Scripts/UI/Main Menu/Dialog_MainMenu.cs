@@ -63,7 +63,7 @@ public class Dialog_MainMenu : Dialog_Base
     public void OnPlayShootingClicked()
     {
         ButtonClickPlayer.Play();
-
+        LevelManager.LoadRandomLevel(LevelTypes.Shooting);
         StartCoroutine(StartStoryCutScene(LevelTypes.Shooting));
     }
 
