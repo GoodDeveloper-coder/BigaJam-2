@@ -26,7 +26,7 @@ public class UICanvasScript : MonoBehaviour
         int _randomNumber = Random.Range(1, 4);
         if (_randomNumber == 1)
         {
-            SceneManager.LoadScene("ShootingLevel_01 1");
+            SceneManager.LoadScene("ShootingLevel_01");
         }
         else if (_randomNumber == 2)
         {
