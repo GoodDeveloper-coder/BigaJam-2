@@ -661,7 +661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3076213195416313893, guid: ee9ca2715d539ef4b9c3692a9fb47a56, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 3076213195416313893, guid: ee9ca2715d539ef4b9c3692a9fb47a56, type: 3}
       propertyPath: m_SortingOrder
@@ -6151,6 +6151,10 @@ PrefabInstance:
       propertyPath: _winSecondPlayerMenu
       value: 
       objectReference: {fileID: 48943885}
+    - target: {fileID: 5138838662099922810, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
+      propertyPath: _gunsList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5779776068364248168, guid: 4bc11b046f85bbf4aaf9d64e1a5577c2, type: 3}
       propertyPath: _container
       value: 

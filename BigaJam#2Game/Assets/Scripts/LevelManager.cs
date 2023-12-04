@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 
-public enum LevelTypes { Parkour = 0, Shooting };
+public enum LevelTypes { Parkour = 0, Shooting = 1};
 
 public static class LevelManager
 {
@@ -54,9 +54,15 @@ public static class LevelManager
         foreach (string sceneName in _AllSceneNames)
         {
             if (sceneName.StartsWith("ParkourLevel"))
+            {
                 _ParkourLevelSceneNames.Add(sceneName);
+                Debug.Log("P: " + sceneName);
+            }
             else if (sceneName.StartsWith("ShootingLevel"))
+            {
                 _ShootingLevelSceneNames.Add(sceneName);
+                Debug.Log("Sh: " + sceneName);
+            }              
         }
     }
 
@@ -69,9 +75,10 @@ public static class LevelManager
         for (int i = 0; i < sceneCount; i++)
         {
             scenes.Add(Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i)));
-            Debug.Log("S: " + scenes[scenes.Count - 1]);
+            //Debug.Log("S: " + scenes[scenes.Count - 1]);
         }
 
         return scenes;
     }
 }
+
