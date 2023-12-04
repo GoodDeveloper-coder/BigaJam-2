@@ -300,7 +300,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 60ac12b060264c04db0c5a67c9ef517a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -701,7 +701,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82257ad82668dd4cb766935dfdf808e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _BulletPrefab: {fileID: -6988238566405567896, guid: 8ee4ef42ab0ef3840bd033e2211c081b, type: 3}
   _bulletSpawnPos: {fileID: 6376808398150992307}
   _shootKey: {fileID: 526034803837253693, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}
   _reloadKey: {fileID: -2704869980158190050, guid: aa2b3449082ca294e8e8a0784bb3b8e0, type: 3}

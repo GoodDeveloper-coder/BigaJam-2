@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class UICanvasScript : MonoBehaviour
 {
     [SerializeField] private AudioSource _clickButtonSound;
+    [SerializeField] private bool _isShootingRegime;
+    [SerializeField] private bool _isParkourRegime;
+    [SerializeField] private int _nextParkourIndexScene;
 
     // Start is called before the first frame update
     void Start()
@@ -23,18 +26,26 @@ public class UICanvasScript : MonoBehaviour
     {
         Time.timeScale = 1f;
         _clickButtonSound.Play();
-        int _randomNumber = Random.Range(1, 4);
-        if (_randomNumber == 1)
+
+        if (_isShootingRegime)
         {
-            SceneManager.LoadScene("ShootingLevel_01");
+            int _randomNumber = Random.Range(1, 4);
+            if (_randomNumber == 1)
+            {
+                SceneManager.LoadScene("ShootingLevel_01");
+            }
+            else if (_randomNumber == 2)
+            {
+                SceneManager.LoadScene("ShootingLevel_02");
+            }
+            else if (_randomNumber == 3)
+            {
+                SceneManager.LoadScene("ShootingLevel_03");
+            }
         }
-        else if (_randomNumber == 2)
+        else if (_isParkourRegime)
         {
-            SceneManager.LoadScene("ShootingLevel_02");
-        }
-        else if (_randomNumber == 3)
-        {
-            SceneManager.LoadScene("ShootingLevel_03");
+            SceneManager.LoadScene(_nextParkourIndexScene);
         }
     }
 

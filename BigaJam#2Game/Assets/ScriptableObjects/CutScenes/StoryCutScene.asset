@@ -25,7 +25,7 @@ MonoBehaviour:
   DefaultDisplaySettings: {fileID: 11400000, guid: fa6bc8cc37df7314e8289b50768acf9e, type: 2}
   Pages:
   - DisplaySettings: {fileID: 0}
-    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Image: {fileID: 21300000, guid: c1ccd995955483c49857a21f8a3241dc, type: 3}
     Text: 'Two heroes, representatives of different worlds - white and black - stood
       at the farewell to the light in the evening.
 
@@ -38,7 +38,7 @@ MonoBehaviour:
       absorbed by your effort, you will live in a new being. White and black, stood
       not far from each other...'
   - DisplaySettings: {fileID: 0}
-    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Image: {fileID: 21300000, guid: d75de91e18d5e244ca29111009f60225, type: 3}
     Text: 'On the rays of light and shadow stood two heroes, representatives of different
       worlds - white and black.
 
@@ -50,7 +50,7 @@ MonoBehaviour:
       However, now they found
       themselves forced to work together to survive in this new reality.'
   - DisplaySettings: {fileID: 0}
-    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Image: {fileID: 21300000, guid: 825d3b80366144e4b97f9c608289f13b, type: 3}
     Text: 'White and black, representatives of yin and yang, stood not far from one
       another, watching their worlds merge into one. From the beginning, it was difficult
       to endure.
@@ -64,7 +64,7 @@ MonoBehaviour:
       However, with each new day, they learned to
       accept their new reality. '
   - DisplaySettings: {fileID: 0}
-    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Image: {fileID: 21300000, guid: cf728ed404bedc348ad9de370cfe3c11, type: 3}
     Text: 'White represented light, hope and peace, while black represented darkness,
       mystery and power.
 
@@ -73,7 +73,7 @@ MonoBehaviour:
       but also to maintain the balance between light and darkness in the new united
       world. '
   - DisplaySettings: {fileID: 0}
-    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Image: {fileID: 21300000, guid: d75de91e18d5e244ca29111009f60225, type: 3}
     Text: 'Meetings of white and black took place in different parts of the world.
 
 
@@ -84,7 +84,7 @@ MonoBehaviour:
       However,
       along with joy and strength came secrets that threatened this new world.'
   - DisplaySettings: {fileID: 0}
-    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Image: {fileID: 21300000, guid: 825d3b80366144e4b97f9c608289f13b, type: 3}
     Text: 'Unbeknownst to either of them, the history of their worlds was also connected
       with the achievement of unity.
 
@@ -97,7 +97,7 @@ MonoBehaviour:
       became the cause of a mysterious conflict that gradually grew between white
       and black.'
   - DisplaySettings: {fileID: 0}
-    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Image: {fileID: 21300000, guid: cf728ed404bedc348ad9de370cfe3c11, type: 3}
     Text: 'Their stories intertwine, and although they overcome trials together,
       it turns out that each of them is hiding secrets from the other.
 
@@ -109,7 +109,7 @@ MonoBehaviour:
       Black,
       on the other hand, hid his weakness to the light.  '
   - DisplaySettings: {fileID: 0}
-    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Image: {fileID: 21300000, guid: 3044f8713284f194d9681b5f041357cb, type: 3}
     Text: 'The rapprochement of white and black revealed not only the secrets of
       their worlds, but also the true essence of their souls.
 
@@ -118,7 +118,7 @@ MonoBehaviour:
       finally realized that they were truly enemies, they found themselves on the
       verge of a devastating conflict.'
   - DisplaySettings: {fileID: 0}
-    Image: {fileID: 21300000, guid: ff456df538dfe264aa732e6120710a00, type: 3}
+    Image: {fileID: 21300000, guid: b44a7432a8d385642bbb9de7504af9c0, type: 3}
     Text: 'Thus began a battle for the survival of light and darkness, in which white
       and black must determine whose world will remain and whose will disappear forever.
 
